@@ -1,10 +1,13 @@
-# The Director’s Signature: Computational and Historical Perspectives on Theatrical Stylometry
+# Reworking Similarity and Consensus in Pose-Based Analyses of Theater Recordings
 
 <!-- .slide: data-background-video="assets/PHALP_fondly_excerpt_output.mp4" -->
 <!-- .slide: data-background-size="contain" -->
 <!-- .slide: data-background-video-loop -->
 <!-- .slide: class="main-title" -->
 
+:::
+
+Advances in pose tracking, action recognition and gesture detection for "in-the-wild" monocular videos continue to improve the precision and consistency of such data inferred from recordings of theater performances. An initial focus of the MIME (Machine Intelligence for Motion Exegesis) project, building upon related work in dance and other cultural forms, involved examining notions of directorial and actorly style via derived motion statistics and embeddings of pose and action characteristics across a corpus of full-length theater recordings. This seminar will review work done so far and present further applications of these methods in analytical and archival contexts. One of the subsequent inquiries involves distilling a "consensus form" of different stagings of the same work by consolidating and averaging pose and action profiles across multiple renditions, aligned in whole or in part via accompanying modalities such as audio and text. Examining a performance's points of conformity to and deviation from the consensus can lead to new insights regarding its influences and the details of its staging. Another approach considers how notions of the similarity of poses, actions and gestures are operationalized and deployed at scale across archives of performances. The efforts to be detailed in the seminar prioritize supporting diverse search algorithms and strategies (such as similarity to a contemporaneous example, to an historical archetype, or to a sketch), generous visual and text-based exploration interfaces, and the maximum practicable degree of flexility regarding search parameters, models, and feature importance.
 
 ---
 
