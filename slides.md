@@ -6,7 +6,6 @@
 <!-- .slide: class="main-title" -->
 
 :::
-
 Advances in pose tracking, action recognition and gesture detection for "in-the-wild" monocular videos continue to improve the precision and consistency of such data inferred from recordings of theater performances. An initial focus of the MIME (Machine Intelligence for Motion Exegesis) project, building upon related work in dance and other cultural forms, involved examining notions of directorial and actorly style via derived motion statistics and embeddings of pose and action characteristics across a corpus of full-length theater recordings. This seminar will review work done so far and present further applications of these methods in analytical and archival contexts. One of the subsequent inquiries involves distilling a "consensus form" of different stagings of the same work by consolidating and averaging pose and action profiles across multiple renditions, aligned in whole or in part via accompanying modalities such as audio and text. Examining a performance's points of conformity to and deviation from the consensus can lead to new insights regarding its influences and the details of its staging. Another approach considers how notions of the similarity of poses, actions and gestures are operationalized and deployed at scale across archives of performances. The efforts to be detailed in the seminar prioritize supporting diverse search algorithms and strategies (such as similarity to a contemporaneous example, to an historical archetype, or to a sketch), generous visual and text-based exploration interfaces, and the maximum practicable degree of flexility regarding search parameters, models, and feature importance.
 
 ---
@@ -37,48 +36,33 @@ Advances in pose tracking, action recognition and gesture detection for "in-the-
 
 Thank you for joining us today.
 
-We'll be discussing our exploratory work bringing Machine Learning techniques to the study of theater performance and directorial style.
-
-The project, Machine Intelligence for Motion Exegesis, or MIME, is a collaboration between myself, Assistant Professor Michael Rau in Stanford's Theater and Performance Studies department, and the Developer Team at Research Data Services at Stanford University Library: Vijoy Abraham, Peter Broadwell and Simon Wiles.
-
-
 ---
 
 
-## ➡️ &nbsp; The Problem: Understanding Pose in Theater <!-- .element: class="fragment custom order-of-sections" -->
+## ➡️ &nbsp; Materials, Inspiration: Stagings and Interpretations <!-- .element: class="fragment custom order-of-sections" -->
 
 
-## ➡️ &nbsp; Methodology: Models and Tools <!-- .element: class="fragment custom order-of-sections" -->
+## ➡️ &nbsp; Frameworks for Similarity and Concensus <!-- .element: class="fragment custom order-of-sections" -->
 
 
-## ➡️ &nbsp; The MIME Platform <!-- .element: class="fragment custom order-of-sections" -->
+## ➡️ &nbsp; Methods: Alignment and Pose Estimation <!-- .element: class="fragment custom order-of-sections" -->
 
 
-## ➡️ &nbsp; Case Studies <!-- .element: class="fragment custom order-of-sections" -->
+## ➡️ &nbsp; Analyses and Some Findings <!-- .element: class="fragment custom order-of-sections" -->
 
 
-## ➡️ &nbsp; Complications and Implications <!-- .element: class="fragment custom order-of-sections" -->
+## ➡️ &nbsp; Some Implications <!-- .element: class="fragment custom order-of-sections" -->
 
-
-## ➡️ &nbsp; Closing Thoughts <!-- .element: class="fragment custom order-of-sections" -->
 
 <!-- .slide: class="order-of-sections" -->
 
 :::
-Our talk has six sections: first I'll discuss the problem we're solving, then Peter will give a technical overview, Simon will discuss the platform, and the bulk of our talk will focus on different analyses our platform has enabled on theatrical performance, and I'll end with some thoughts about the future of this work.
+
 
 ---
 
 
-# The Problem
-
-:::
-Pose is fundamental to theater. Pose and staging lie at the intersection of authorial intent and directorial vision, pose is shaped by design choices of the costumes, set and lights and mediated by the performer's body. In traditional theater studies, pose is often taken for granted. Directors, performers and audiences intuitively understand the power of well-crafted tableaux or precisely choreographed movement sequences. Certain iconic poses define productions: Brecht's silent scream choreography in Mother Courage, Bob Fosse's shoulder rolls and arm pops in The Pajama Game, or the ensemble poses in "A Chorus Line." These indelible poses make work memorable and serve as shorthand for identifying directorial style. These illustrative examples serve, in the scholarly community as the basis for an argument about the style. Examining pose in theater is challenging since it sits at the heart of artistic expression and is so fundamental it's often ignored. Our research addresses one major question: How can we quantify and analyze actors' physical arrangements and movements to reveal meaningful insights about the director's creative contribution? Can we move from illustrative example to examining the actual patterns of movement that form that production.
-
----
-
-
-## The Problem (and Opportunity)
+## Materials, Inspiration
 
 <div class="screenshots">
 
@@ -105,7 +89,7 @@ To answer this question, we turned to computer vision algorithms to precisely de
 ---
 
 
-## The Problem (and Opportunity)
+## Materials, Inspiration
 
 <div class="screenshots">
 
@@ -134,7 +118,28 @@ I'll hand it over to Peter to discuss our methodology.
 ---
 
 
-# Methodology
+# Frameworks for Similarity and Concensus in Cultural Analytics
+
+
+:::
+This is where we'd discuss theoretical frameworks and concepts: "tradition dominants" and "consensus form" from folklore, "cultural attractor theory" from psychology/social science.
+
+---
+
+
+## Prior Work: Choreographic Transmission and Variance on Social Media
+
+
+:::
+Finally we adopted another embedding, this one from Google and CalTech, that projects the 2D coordinates of a pose into a 16-dimension space that situates poses closer together if they are probably similar in their actual 3D representations. Note that we also get the estimated 3D coordinates of the poses from PHALP, but as we'll see later, sometimes this probabilistic embedding is more useful for analysis.
+
+
+---
+
+
+
+# Methods
+
 
 
 ---
@@ -211,11 +216,6 @@ Finally we adopted another embedding, this one from Google and CalTech, that pro
 
 
 ---
-
-
-# The MIME Platform
-
-<div>&nbsp;</div>
 
 
 ### Pipeline → Database → API Server → Interfaces
@@ -303,42 +303,7 @@ The Application and API server is a container that has all our machine-learning 
 
 The container is also home to a Jupyter Notebook server and a FastAPI server that exposes the endpoints that are consumed by our web interface
 
----
 
-
-# The MIME Platform
-
-<section>
-<div>
-
-![Platform Diagram](assets/building/platform_diagram.svg)
-<svg class="spotlight" viewBox="0 0 1080 300" preserveAspectRatio="none">
-  <script type="application/json" class="spotlight-data">
-  [
-    {"x":"17px","y":"28px","height":"215px","width":"245px"},
-    {"x":"295px","y":"8px","height":"143px","width":"459px"},
-    {"x":"351px","y":"155px","height":"125px","width":"215px"},
-    {"x":"629px","y":"155px","height":"125px","width":"150px"},
-    {"x":"828px","y":"131px","height":"168px","width":"251px"},
-    {"x":"772px","y":"18px","height":"92px","width":"295px"}
-  ]
-  </script>
-  <defs>
-    <mask id="spotlight-mask">
-      <rect width="1080" height="300" fill="white" opacity=".6"/>
-      <rect x="0" y="0" width="1080" height="300" fill="black"/>
-    </mask>
-  </defs>
-  <rect width="1080" height="300" fill="#000" mask="url(#spotlight-mask)"/>
-</svg>
-
-</div>
-
-:::
-
-This diagram describes the platform architecture that delivers the flexibility we need
-
-The whole thing is orchestrated with docker which makes maintaining it and working with it very convenient.
 
 ---
 
@@ -428,7 +393,7 @@ Michael's now going to show us some of the ways he's been able to make use of th
 ---
 
 
-# Case Studies
+# Analyses and Some Findings
 
 ---
 
@@ -451,191 +416,9 @@ Using MIME's timeline, we can easily analyze a production in terms of repetetive
 ---
 
 
-## Corpus Studies: Assembling Multiple Works per Director
-
-<img class="r-stretch" src="assets/results/31_performances.png" />
-
-:::
-To address the question of what the data we extract from recordings via the MIME platform can tell us about how theater directors produce specific effects in their own personal style, we focused on three high-profile, contemporary "auteur" directors: Bill T. Jones, Romeo Castellucci, and Krzysztof Warlikowski, selecting 10 or 11 performances each has directed. We ran video recordings of these performances through the MIME pipeline without alteration, other than upscaling some of them to at least HD quality, because the models work better with high-resolution footage.
-
-As you can see, this produced 10-20 hours of pose data per director.
-
-
----
-
-
-## Which Features Are Best for Differentiating between Directors?
+## Delsarte, Denishawn: When Expressive Components are Systematized
 
 <div class="img-row">
-
-Pose motion and distance statistics
-![Pose motion and distance confusion matrix](assets/results/LOO_motion_distance.png "Pose motion and distance confusion matrix")
-
-View-invariant pose embeddings
-![View-invariant pose embeddings confusion matrix](assets/results/LOO_POEM_features.png "View-invariant pose embeddings confusion matrix")
-
-</div>
-
-:::
-We framed our approach as a performance-to-director classification problem, investigating which pose, action, motion and distance data elements are most effective at predicting the correct stage director for a given performance. The first steps was a basic "leave one out" test comparing the aggregated, averaged feature vectors across each director's entire collection to the average feature vector of one "held out" performance, using cosine similarity, in what's basically a very simple multidimensional kernel-based similarity comparison.
-
-This approach found that the basic pose and motion statistics were not as effective at differentiating works by Castellucci and Warlikowski. However, they were quite good at telling the difference between Bill T. Jones and the other two directors. Meanwhile, the aggregated pose embeddings were more successful at differentiating the works of all three directors.
-
-
----
-
-
-## Which Features Are Best for Differentiating between Directors?
-
-<img class="r-stretch" src="assets/results/31_performances_hl.png" />
-
-:::
-Here we've highlighted the performances with greater amounts of motion. Most are from Bill T. Jones, who primarily creates dance works, while the other two directors tend to direct mostly operas and other more static forms of stage plays. So the motion and distance-based comparison may be better at picking up on the difference in primary genres between these directors. Meanwhile, the pose embedding approach seems to be picking up something distinctive about each director's individual style. We'll look into what that might be in just a minute.
-
-
----
-
-
-## Which Features Are Best for Differentiating between Directors?
-
-<div class="img-row">
-
-Body keypoint coords (3D)
-![3D coordinates confusion matrix](assets/results/LOO_3D_coords.png "3D coordinates confusion matrix")
-
-Action recognition embeddings
-![Action recognition embeddings confusion matrix](assets/results/LOO_action_features.png "Action recognition embeddings confusion matrix")
-
-</div>
-
-:::
-Here are some further leave-one-out classification experiments with the 3D pose coordinates and action recognition vectors used as features.
-The action recognition embeddings do seem to be somewhat better than the 3D coordinates for telling the directors apart.
-
-
----
-
-
-## Which Features Are Best for Differentiating between Directors?
-
-<img class="r-stretch" src="assets/results/classification_experiments.png" />
-
-:::
-Here are some results with slightly more sophisticated classification algorithms and using 10-fold cross-validation with different random seeds to try to get a better sense of how these approaches might perform with a larger, more diverse dataset. They do suggest that some algorithms are better at detecting some aspects of even the large-scale motion and distance data that differentiate directors, so that is worth exploring further, while the effectiveness of the embedding-based inputs does drop a bit when the training set is small.
-
-
----
-
-
-## Feature Importances: Motion and Distance (Random Forest)
-
-<div class="img-row">
-
-![Motion and distance feature importances, Random Forest](assets/results/feature_importances_rf.png "Motion and distance feature importances, Random Forest") Permutation Importance
-
-![Motion and distance feature importances, Random Forest (sorted)](assets/results/feature_importances_rf_sorted.png "Motion and distance feature importances, Random Forest") Mean Decrease in Impurity
-
-</div>
-
-:::
-To get at the question of exactly which elements of these feature sets the models found the most useful at differentiating between directors, we ran some feature importance tests (here we show the results for the Random Forest algorithm, which had among the best performance and also provides two methods for feature importance evaluation, enabling us to compare the results). Although the error bars are large (again), and the results suggest that including some features may actually counter-productive, it we do get some indications that things like the deviation (variety) of motion, average amounts of motion, average amounts of synchronized motion, and perhaps the distance between actors help the model differentiate between directors, at least from a bulk "distant" viewing perspective.
-
----
-
-
-## Collinearity of Motion and Distance Features
-
-<p class="stretch"><img
-  src="assets/results/feature_collinearity.png"
-/></p>
-
-:::
-We also can run some tests to evaluate which features are collinear, in that their contributions to the classifications tend to point in the same directions, indicating that some of them may be redundant. It's also interesting to note that for example the simultaneous motion features are not particularly collinear with the raw motion features, so probably it's worth keeping both of them as inputs to the classifier.
-
----
-
-
-## Feature Importances: View-Invariant Pose Embeddings
-
-<div class="img-row">
-
-![Pose embedding feature importances, Random Forest](assets/results/poem_feature_importances_nb.png "Pose embedding feature importances, Random Forest") Permutation Importance (Gaussian Naive Bayes)
-
-![Pose embedding feature importances, Random Forest (sorted)](assets/results/poem_importances_rf.png "Pose embedding feature importances, Random Forest") Mean Decrease in Impurity (Random Forest)
-
-:::
-In the case of the embeddings, however, it's more difficult to determine what the salience of features 1 and 8 (out of 16) actually means for poses -- we'll show some initial steps we've taken to dig into this in a couple of slides.
-
-</div>
-
----
-
-
-## Collinearity of View-Invariant Pose Vector Features
-
-<p class="stretch"><img
-  src="assets/results/poem_vector_collinearity.png"
-/></p>
-
-:::
-The collinearity analysis is similar not very insightful when we're considering semantic pose embeddings; really one of the only ways to get insights about these is to investigate them in the context of the poses to which they match the best.
-
----
-
-
-## Visualizing Directors' Pose "Repertoires"
-
-<img class="r-stretch" src="assets/results/poem_umap_sampled_2.png" />
-
-:::
-To explore how the directors' pose "repertoires" might be distributed through the view-invariant pose embedding space, and hopefully get a better sense of what aspects of these embeddings were helping to differentiate the directors, we plotted a sample of all of their pose embeddings into a 2D space via UMAP projection as color-coded dots. The larger hexagons represent each director's overall average pose embedding. Although we can't directly translate these average points into poses, we can search for the most similar poses to them from the entire data set thanks to MIME's powerful vector database, and we've shown some of those here in the callouts.
-
-This projection does seem to reveal useful observations, like the overall greater similarity between Castellucci’s and Warlikowski’s pose repertoires relative to Jones’s, and the callouts highlight how Jones tends to employ dramatically contorted poses, Castellucci to favor hunched-over standing postures, and Warlikowski to deploy figures in an active sitting position.
-
-
----
-
-
-## Hands and Delsarte
-
-<div class="img-row">
-
-Delsarte Pose
-![Pose motion and distance feature importances](assets/results/delsarte_exercises.jpg "Poses from Delsarte Instruction Manual")
-
-MIME Detection
-![Hands inclusion](assets/results/Delsarte_results.png "Delsarte Comparison")
-
-</div>
-
-:::
-One of the more recent developments that we've been working on with MIME is to take the 19th century pose system, invented by Francois Delsarte that has a long, influential and bizarre history, and to use those diagrams of poses that he invented and see where they showed up in our contemporary work. The delsarte system has a series of codified full-figure and hand poses, that express certain ideas and emotions and using the search function of MIME, we were able to identify precisely where and when certain actors would arrive in Delsarte poses. These results allowed us to create "Delsarte Thumbprints" to not only see which gestures are reminiscient of Delsarte's choreography, and to track the frequency through which they appear in a production.
-
----
-
-
-## Delsarte Thumbprint
-
-<div class="img-row">
-
-Bill T Jones's Fondly Do We Hope
-![Pose frequency throughout the work](assets/results/Fondly2.png "Poses from Delsarte Instruction Manual")
-
-Romeo Castellucci's Democracy in America
-![Hands inclusion](assets/results/Castellucci-Delsarte.png "Delsarte Comparison")
-
-</div>
-
-:::
-Here you can see two different "thumbprints"--that demonstrate the the difference quantities of pose throughout the show. Bill T. Jones' production shows far more "Prostration" than Castellucci. And Castellucci's production features far more poses of supplication. And while it may seem a little silly to use these 19th century melodramatic poses to analize a works of contemporary theater, this method points towards ways in which this technology could be used to trace the genelogy of artistic movements, and the subtle ways that historical aesthetics shape our contemprary tastes.
-
----
-
-
-## Delsarte Through the Years
-
-<div class="img-row">
-
 
 Ted Shawn: "Nobody Knows<br> the Trouble I've Seen" from his <br>_Four Dances Based on<br> American Folk Music_ in 1938
 ![Ted Shawn Dancing his Nobody Knows the Trouble I've Seen in 1938](assets/results/Shawn_1938.png "Ted Shawn Dancing his Nobody Knows the Trouble I've Seen in 1938")
@@ -650,8 +433,7 @@ Recently, we have been looking at the footage of Ted Shawn, a choreographer and 
 
 ---
 
-
-## Delsarte Through the Years
+## Delsarte, Denishawn: When Expressive Components are Systematized
 
 <div class="img-row">
 
@@ -661,7 +443,17 @@ Plots of the prevalences of the Shawn/Delsarte "Reflection" pose archetype<br> i
 </div>
 
 :::
-Added provisionally
+
+---
+
+##
+
+<!-- .slide: data-background-video="assets/Shawn_Nobody_Knows_stacked.mp4" -->
+<!-- .slide: data-background-size="contain" -->
+<!-- .slide: data-background-video-loop -->
+<!-- .slide: class="main-title" -->
+
+:::
 
 ---
 
@@ -756,51 +548,6 @@ As a final analytical output of the effort just described, we can plot the pose 
 
 # Complications
 
-
----
-
-
-## Material and Interpretive Discrepancies
-
-<!-- .slide: data-background-video="assets/complications/PHALP_Shawn_Nobody_Knows_stacked.mp4" -->
-<!-- .slide: data-background-size="contain" -->
-<!-- .slide: data-background-video-loop -->
-<!-- .slide: class="main-title" -->
-
----
-
-
-## Tracking and Occlusion in Monocular Video
-
-<!-- .slide: data-background-video="assets/complications/fondly_phalp_opp_comparison_sbs.mp4" -->
-<!-- .slide: data-background-size="contain" -->
-<!-- .slide: data-background-video-loop -->
-<!-- .slide: class="main-title" -->
-
----
-
-
-## "Cursed" Frames (and Poses)
-
-<div class="img-row">
-
-![cursed_004863](assets/complications/cursed_004863.jpg)
-
-![cursed_083450](assets/complications/cursed_083450.jpg)
-
-![cursed_107925](assets/complications/cursed_107925.jpg)
-
-</div>
-
-:::
-
-These are cursed.
-
----
-
-
-# Complications
-
 :::
 
 In all applications using AI, it's important to acknowledge ethical considerations and limitations. Like all AI, there's danger in incorrect pose estimations and hallucination. Working with archival materials requires careful navigation—we've developed clear guidelines ensuring respectful, responsible use.
@@ -862,6 +609,226 @@ Thank you.
 ---
 
 
+# The MIME Platform
+
+<section>
+<div>
+
+![Platform Diagram](assets/building/platform_diagram.svg)
+<svg class="spotlight" viewBox="0 0 1080 300" preserveAspectRatio="none">
+  <script type="application/json" class="spotlight-data">
+  [
+    {"x":"17px","y":"28px","height":"215px","width":"245px"},
+    {"x":"295px","y":"8px","height":"143px","width":"459px"},
+    {"x":"351px","y":"155px","height":"125px","width":"215px"},
+    {"x":"629px","y":"155px","height":"125px","width":"150px"},
+    {"x":"828px","y":"131px","height":"168px","width":"251px"},
+    {"x":"772px","y":"18px","height":"92px","width":"295px"}
+  ]
+  </script>
+  <defs>
+    <mask id="spotlight-mask">
+      <rect width="1080" height="300" fill="white" opacity=".6"/>
+      <rect x="0" y="0" width="1080" height="300" fill="black"/>
+    </mask>
+  </defs>
+  <rect width="1080" height="300" fill="#000" mask="url(#spotlight-mask)"/>
+</svg>
+
+</div>
+
+:::
+
+This diagram describes the platform architecture that delivers the flexibility we need
+
+The whole thing is orchestrated with docker which makes maintaining it and working with it very convenient.
+
+
+---
+
+
+## Corpus Studies: Assembling Multiple Works per Director
+
+<img class="r-stretch" src="assets/results/31_performances.png" />
+
+:::
+To address the question of what the data we extract from recordings via the MIME platform can tell us about how theater directors produce specific effects in their own personal style, we focused on three high-profile, contemporary "auteur" directors: Bill T. Jones, Romeo Castellucci, and Krzysztof Warlikowski, selecting 10 or 11 performances each has directed. We ran video recordings of these performances through the MIME pipeline without alteration, other than upscaling some of them to at least HD quality, because the models work better with high-resolution footage.
+
+As you can see, this produced 10-20 hours of pose data per director.
+
+
+---
+
+
+## Which Features Are Best for Differentiating between Directors?
+
+<div class="img-row">
+
+Pose motion and distance statistics
+![Pose motion and distance confusion matrix](assets/results/LOO_motion_distance.png "Pose motion and distance confusion matrix")
+
+View-invariant pose embeddings
+![View-invariant pose embeddings confusion matrix](assets/results/LOO_POEM_features.png "View-invariant pose embeddings confusion matrix")
+
+</div>
+
+:::
+We framed our approach as a performance-to-director classification problem, investigating which pose, action, motion and distance data elements are most effective at predicting the correct stage director for a given performance. The first steps was a basic "leave one out" test comparing the aggregated, averaged feature vectors across each director's entire collection to the average feature vector of one "held out" performance, using cosine similarity, in what's basically a very simple multidimensional kernel-based similarity comparison.
+
+This approach found that the basic pose and motion statistics were not as effective at differentiating works by Castellucci and Warlikowski. However, they were quite good at telling the difference between Bill T. Jones and the other two directors. Meanwhile, the aggregated pose embeddings were more successful at differentiating the works of all three directors.
+
+
+---
+
+
+## Which Features Are Best for Differentiating between Directors?
+
+<img class="r-stretch" src="assets/results/31_performances_hl.png" />
+
+:::
+Here we've highlighted the performances with greater amounts of motion. Most are from Bill T. Jones, who primarily creates dance works, while the other two directors tend to direct mostly operas and other more static forms of stage plays. So the motion and distance-based comparison may be better at picking up on the difference in primary genres between these directors. Meanwhile, the pose embedding approach seems to be picking up something distinctive about each director's individual style. We'll look into what that might be in just a minute.
+
+
+---
+
+
+## Which Features Are Best for Differentiating between Directors?
+
+<div class="img-row">
+
+Body keypoint coords (3D)
+![3D coordinates confusion matrix](assets/results/LOO_3D_coords.png "3D coordinates confusion matrix")
+
+Action recognition embeddings
+![Action recognition embeddings confusion matrix](assets/results/LOO_action_features.png "Action recognition embeddings confusion matrix")
+
+</div>
+
+:::
+Here are some further leave-one-out classification experiments with the 3D pose coordinates and action recognition vectors used as features.
+The action recognition embeddings do seem to be somewhat better than the 3D coordinates for telling the directors apart.
+
+
+---
+
+
+## Which Features Are Best for Differentiating between Directors?
+
+<img class="r-stretch" src="assets/results/classification_experiments.png" />
+
+:::
+Here are some results with slightly more sophisticated classification algorithms and using 10-fold cross-validation with different random seeds to try to get a better sense of how these approaches might perform with a larger, more diverse dataset. They do suggest that some algorithms are better at detecting some aspects of even the large-scale motion and distance data that differentiate directors, so that is worth exploring further, while the effectiveness of the embedding-based inputs does drop a bit when the training set is small.
+
+
+
+---
+
+
+## Collinearity of Motion and Distance Features
+
+<p class="stretch"><img
+  src="assets/results/feature_collinearity.png"
+/></p>
+
+:::
+We also can run some tests to evaluate which features are collinear, in that their contributions to the classifications tend to point in the same directions, indicating that some of them may be redundant. It's also interesting to note that for example the simultaneous motion features are not particularly collinear with the raw motion features, so probably it's worth keeping both of them as inputs to the classifier.
+
+---
+
+
+## Feature Importances: View-Invariant Pose Embeddings
+
+<div class="img-row">
+
+![Pose embedding feature importances, Random Forest](assets/results/poem_feature_importances_nb.png "Pose embedding feature importances, Random Forest") Permutation Importance (Gaussian Naive Bayes)
+
+![Pose embedding feature importances, Random Forest (sorted)](assets/results/poem_importances_rf.png "Pose embedding feature importances, Random Forest") Mean Decrease in Impurity (Random Forest)
+
+:::
+In the case of the embeddings, however, it's more difficult to determine what the salience of features 1 and 8 (out of 16) actually means for poses -- we'll show some initial steps we've taken to dig into this in a couple of slides.
+
+</div>
+
+---
+
+
+## Collinearity of View-Invariant Pose Vector Features
+
+<p class="stretch"><img
+  src="assets/results/poem_vector_collinearity.png"
+/></p>
+
+:::
+The collinearity analysis is similar not very insightful when we're considering semantic pose embeddings; really one of the only ways to get insights about these is to investigate them in the context of the poses to which they match the best.
+
+---
+
+
+## Visualizing Directors' Pose "Repertoires"
+
+<img class="r-stretch" src="assets/results/poem_umap_sampled_2.png" />
+
+:::
+To explore how the directors' pose "repertoires" might be distributed through the view-invariant pose embedding space, and hopefully get a better sense of what aspects of these embeddings were helping to differentiate the directors, we plotted a sample of all of their pose embeddings into a 2D space via UMAP projection as color-coded dots. The larger hexagons represent each director's overall average pose embedding. Although we can't directly translate these average points into poses, we can search for the most similar poses to them from the entire data set thanks to MIME's powerful vector database, and we've shown some of those here in the callouts.
+
+This projection does seem to reveal useful observations, like the overall greater similarity between Castellucci’s and Warlikowski’s pose repertoires relative to Jones’s, and the callouts highlight how Jones tends to employ dramatically contorted poses, Castellucci to favor hunched-over standing postures, and Warlikowski to deploy figures in an active sitting position.
+
+
+---
+
+
+## Hands and Delsarte
+
+<div class="img-row">
+
+Delsarte Pose
+![Pose motion and distance feature importances](assets/results/delsarte_exercises.jpg "Poses from Delsarte Instruction Manual")
+
+MIME Detection
+![Hands inclusion](assets/results/Delsarte_results.png "Delsarte Comparison")
+
+</div>
+
+:::
+One of the more recent developments that we've been working on with MIME is to take the 19th century pose system, invented by Francois Delsarte that has a long, influential and bizarre history, and to use those diagrams of poses that he invented and see where they showed up in our contemporary work. The delsarte system has a series of codified full-figure and hand poses, that express certain ideas and emotions and using the search function of MIME, we were able to identify precisely where and when certain actors would arrive in Delsarte poses. These results allowed us to create "Delsarte Thumbprints" to not only see which gestures are reminiscient of Delsarte's choreography, and to track the frequency through which they appear in a production.
+
+---
+
+
+## Delsarte Thumbprint
+
+<div class="img-row">
+
+Bill T Jones's Fondly Do We Hope
+![Pose frequency throughout the work](assets/results/Fondly2.png "Poses from Delsarte Instruction Manual")
+
+Romeo Castellucci's Democracy in America
+![Hands inclusion](assets/results/Castellucci-Delsarte.png "Delsarte Comparison")
+
+</div>
+
+:::
+Here you can see two different "thumbprints"--that demonstrate the the difference quantities of pose throughout the show. Bill T. Jones' production shows far more "Prostration" than Castellucci. And Castellucci's production features far more poses of supplication. And while it may seem a little silly to use these 19th century melodramatic poses to analize a works of contemporary theater, this method points towards ways in which this technology could be used to trace the genelogy of artistic movements, and the subtle ways that historical aesthetics shape our contemprary tastes.
+
+
+
+## Feature Importances: Motion and Distance (Random Forest)
+
+<div class="img-row">
+
+![Motion and distance feature importances, Random Forest](assets/results/feature_importances_rf.png "Motion and distance feature importances, Random Forest") Permutation Importance
+
+![Motion and distance feature importances, Random Forest (sorted)](assets/results/feature_importances_rf_sorted.png "Motion and distance feature importances, Random Forest") Mean Decrease in Impurity
+
+</div>
+
+:::
+To get at the question of exactly which elements of these feature sets the models found the most useful at differentiating between directors, we ran some feature importance tests (here we show the results for the Random Forest algorithm, which had among the best performance and also provides two methods for feature importance evaluation, enabling us to compare the results). Although the error bars are large (again), and the results suggest that including some features may actually counter-productive, it we do get some indications that things like the deviation (variety) of motion, average amounts of motion, average amounts of synchronized motion, and perhaps the distance between actors help the model differentiate between directors, at least from a bulk "distant" viewing perspective.
+
+
+---
+
+
 ## 3D Keypoint Importances (Random Forest)
 
 <p class="stretch"><img
@@ -894,3 +861,46 @@ Thank you.
 <p class="stretch"><img
   src="assets/results/ava_umap.png"
 /></p>
+
+# Complications
+
+
+---
+
+
+## Material and Interpretive Discrepancies
+
+<!-- .slide: data-background-video="assets/complications/PHALP_Shawn_Nobody_Knows_stacked.mp4" -->
+<!-- .slide: data-background-size="contain" -->
+<!-- .slide: data-background-video-loop -->
+<!-- .slide: class="main-title" -->
+
+---
+
+
+## Tracking and Occlusion in Monocular Video
+
+<!-- .slide: data-background-video="assets/complications/fondly_phalp_opp_comparison_sbs.mp4" -->
+<!-- .slide: data-background-size="contain" -->
+<!-- .slide: data-background-video-loop -->
+<!-- .slide: class="main-title" -->
+
+---
+
+
+## "Cursed" Frames (and Poses)
+
+<div class="img-row">
+
+![cursed_004863](assets/complications/cursed_004863.jpg)
+
+![cursed_083450](assets/complications/cursed_083450.jpg)
+
+![cursed_107925](assets/complications/cursed_107925.jpg)
+
+</div>
+
+:::
+
+These are cursed.
+
