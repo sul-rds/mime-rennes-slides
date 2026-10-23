@@ -750,6 +750,16 @@ Practically speaking, the easiest way to align the recordings, which only works 
 :::
 As a final analytical output of the effort just described, we can plot the pose or motion similarities of each of the 7 performances to the average  "consensus" performance across the entire work (the dashed lines are scene and act boundaries). This is still a work in progress, but we can use this analysis to detect patterns such as certain scenes in which stagings are more likely to deviate from the consensus poses, and eventually use this to highlight automatically where directors might use especially distinctive poses and actions.
 
+---
+# Performance Invariance
+
+:::
+A performance work is, operationally, what persists across its re-performances. Performers, costumes, tempo, historical moment, audience and individual choices all change. Whatever survives that churn is the invariant. 
+
+Richard Schechner has a wide quoted definition of performance that it is ""twice-behaved behavior."  The invariants idea tries to put numbers on that definition: what, exactly, is the "twice" repeating?
+
+We see new strands forming: . 1. Who is dancing? This is stylometry and attribution: identify the dancer, the director, the style.
+2. What is the dance? This is invariance and transmission: identify what survives across bodies.
 
 ---
 
