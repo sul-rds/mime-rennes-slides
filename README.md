@@ -1,1 +1,1 @@
-# mime-cesta-slides
+# mime-rennes-slides
