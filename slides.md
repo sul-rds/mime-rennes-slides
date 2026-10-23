@@ -1,6 +1,6 @@
 # Reworking Similarity and Consensus in Pose-Based Analyses of Theater Recordings
 
-<!-- .slide: data-background-video="assets/PHALP_fondly_excerpt_output.mp4" -->
+<!-- .slide: data-background-video="assets/K_K65_excerpt_silent.mp4" -->
 <!-- .slide: data-background-size="contain" -->
 <!-- .slide: data-background-video-loop -->
 <!-- .slide: class="main-title" -->
@@ -118,8 +118,7 @@ I'll hand it over to Peter to discuss our methodology.
 ---
 
 
-# Frameworks for Similarity and Concensus in Cultural Analytics
-
+# Frameworks for Similarity and Concensus
 
 :::
 This is where we'd discuss theoretical frameworks and concepts: "tradition dominants" and "consensus form" from folklore, "cultural attractor theory" from psychology/social science.
@@ -127,15 +126,29 @@ This is where we'd discuss theoretical frameworks and concepts: "tradition domin
 ---
 
 
-## Prior Work: Choreographic Transmission and Variance on Social Media
+## Choreographic Transmission and Variance on Social Media
+
+<img class="r-stretch" src="assets/previous_work/XOXO_timelines.png" />
 
 
 :::
-Finally we adopted another embedding, this one from Google and CalTech, that projects the 2D coordinates of a pose into a 16-dimension space that situates poses closer together if they are probably similar in their actual 3D representations. Note that we also get the estimated 3D coordinates of the poses from PHALP, but as we'll see later, sometimes this probabilistic embedding is more useful for analysis.
+K-pop!
 
 
 ---
 
+
+## Choreographic Transmission and Variance on Social Media
+
+<img class="r-stretch" src="assets/previous_work/cover_analysis.png" />
+
+
+:::
+Corpus: 10 TikTok dance challenges, 5-20 cover dances per challenge = 133 single-dancer TikTok covers + 10 demonstration videos 
+
+Correlation (Pearson’s) of cover/demonstration pose similarity vs. motion in cover dance -- r: .04, p: 5.56e-39 – significant but very wea
+
+---
 
 
 # Methods
@@ -218,21 +231,7 @@ Finally we adopted another embedding, this one from Google and CalTech, that pro
 ---
 
 
-### Pipeline → Database → API Server → Interfaces
-
-
-:::
-
-So how do we operationalize these models and techniques?  How do we take the inferences and predictions they generate and make them useful for exploring our research questions?
-
-The MIME platform consists of a modular ingestion pipeline, a database with sophisticated vector storage and indexing capabilities, an application and API server, and a collection of related interfaces that allow us to investigate, analyze, and visualize the data we have assembled.
-
-The loosely-coupled nature of the platform allows us to iterate on steps somewhat independently and experiment with different approaches while still providing a consistent framework for our development.
-
----
-
-
-## Pipeline
+## The MIME Pipeline
 
 
 <ul style="margin-top:2rem">
@@ -267,43 +266,6 @@ In addition to the three core technologies that Peter already introduced our ing
 and once we have all this information we also need to perform a number of coordination tasks
 
 these are tasks that are adjacent to the primary AI/ML inference tasks and which supplement and augment the raw pose estimation data.
-
----
-
-<div>
-
-
-## Database
-
-* PostgreSQL / pgvector
-* Multiple similarity metrics
-* ANN Indexes (`IVFFlat`, `HNSW`)
-</div>
-
-
-<div style="margin-top: 2rem">
-
-
-## Application / API Server
-
-* Machine-Learning dependencies
-* Full Data-Science stack
-* Jupyter Notebook server <!-- .element: class="fragment" -->
-* FastAPI server <!-- .element: class="fragment" -->
-
-
-</div><!-- .element: class="fragment" -->
-
-:::
-
-These inference and computational tasks are lengthy and expensive, so all the data generated are stored in our database server for subsequent retrieval and analysis.  For our vector storage and querying capabilities we're using pgvector which offers a number of affordances for the performant ANN searches on which much of the functionality is built.
-
-
-The Application and API server is a container that has all our machine-learning dependencies available and its where all our machine learning and back-end code runs
-
-The container is also home to a Jupyter Notebook server and a FastAPI server that exposes the endpoints that are consumed by our web interface
-
-
 
 ---
 
@@ -404,14 +366,7 @@ Michael's now going to show us some of the ways he's been able to make use of th
 :::
 Using MIME's timeline, we can easily analyze a production in terms of repetetive gestures. Pina Bausch is famous for her use of repetition. There's a popular quote often attritubed to Pina Bausch that "Repetition is not repetition... The same action makes you feel something completely different by the end." A researcher can simply select a specific pose in the production, and the timeline will show where else the pose shows up in the performance. You can jump easily to those spots in the performance, or you use it chart certain thematic recurrances. The timeline view gives you a distant view of the performance, where you can see chart entrances and exits of performers, and as get a sense of some aspects rhythmic or thematic elements by noting what repeats within the performance and when.
 
----
 
-
-## Comparing Degrees of Simultanous Movement (Gestures)
-
-  <img
-    src="assets/results/Kontakthof_Simultaneous_Joint_Motion.png"
-  />
 
 ---
 
@@ -545,6 +500,58 @@ As a final analytical output of the effort just described, we can plot the pose 
 
 ---
 
+# A Closer Look: Kontakthof and Kontakthof 65
+
+---
+
+
+## Correlated motion in both performances
+
+<div class="r-stack">
+  <img
+    src="assets/results/Kontakthof_Simultaneous_Joint_Motion.png"
+  />
+  <img
+    class="fragment"
+    src="assets/results/Kontakthof65_Simultaneous_Joint_Motion.png"
+  />
+</div>
+
+:::
+
+
+---
+
+
+## Align by Music (Pitch Chroma) and Poses?
+
+<div class="r-stack">
+  <img
+    src="assets/methods/PinaBauschKontakhof65.upscaled.mp4_poses_chroma_comparison.png"
+  />
+  <img
+    class="fragment"
+    src="assets/results/PinaBauschKontakhof65.upscaled.mp4_pose_warping_path.png"
+  />
+</div>
+
+:::
+
+---
+
+
+## Finding the "most similar" and "most different" sections
+
+<img class="stretch" src="assets/results/all_poses_chroma_avg_poem_sim.png" />
+
+:::
+As a final analytical output of the effort just described, we can plot the pose or motion similarities of each of the 7 performances to the average  "consensus" performance across the entire work (the dashed lines are scene and act boundaries). This is still a work in progress, but we can use this analysis to detect patterns such as certain scenes in which stagings are more likely to deviate from the consensus poses, and eventually use this to highlight automatically where directors might use especially distinctive poses and actions.
+
+
+---
+
+
+
 
 # Complications
 
@@ -642,6 +649,58 @@ Thank you.
 This diagram describes the platform architecture that delivers the flexibility we need
 
 The whole thing is orchestrated with docker which makes maintaining it and working with it very convenient.
+
+
+---
+
+
+### Pipeline → Database → API Server → Interfaces
+
+
+:::
+
+So how do we operationalize these models and techniques?  How do we take the inferences and predictions they generate and make them useful for exploring our research questions?
+
+The MIME platform consists of a modular ingestion pipeline, a database with sophisticated vector storage and indexing capabilities, an application and API server, and a collection of related interfaces that allow us to investigate, analyze, and visualize the data we have assembled.
+
+The loosely-coupled nature of the platform allows us to iterate on steps somewhat independently and experiment with different approaches while still providing a consistent framework for our development.
+
+
+---
+
+<div>
+
+
+## Database
+
+* PostgreSQL / pgvector
+* Multiple similarity metrics
+* ANN Indexes (`IVFFlat`, `HNSW`)
+</div>
+
+
+<div style="margin-top: 2rem">
+
+
+## Application / API Server
+
+* Machine-Learning dependencies
+* Full Data-Science stack
+* Jupyter Notebook server <!-- .element: class="fragment" -->
+* FastAPI server <!-- .element: class="fragment" -->
+
+
+</div><!-- .element: class="fragment" -->
+
+:::
+
+These inference and computational tasks are lengthy and expensive, so all the data generated are stored in our database server for subsequent retrieval and analysis.  For our vector storage and querying capabilities we're using pgvector which offers a number of affordances for the performant ANN searches on which much of the functionality is built.
+
+
+The Application and API server is a container that has all our machine-learning dependencies available and its where all our machine learning and back-end code runs
+
+The container is also home to a Jupyter Notebook server and a FastAPI server that exposes the endpoints that are consumed by our web interface
+
 
 
 ---
@@ -811,6 +870,26 @@ Romeo Castellucci's Democracy in America
 Here you can see two different "thumbprints"--that demonstrate the the difference quantities of pose throughout the show. Bill T. Jones' production shows far more "Prostration" than Castellucci. And Castellucci's production features far more poses of supplication. And while it may seem a little silly to use these 19th century melodramatic poses to analize a works of contemporary theater, this method points towards ways in which this technology could be used to trace the genelogy of artistic movements, and the subtle ways that historical aesthetics shape our contemprary tastes.
 
 
+---
+
+
+## Improving Motion Modeling
+
+<video data-autoplay controls muted src="assets/Johana19_ST_MC_W_V1m_P_S_triptych.mp4"></video>
+
+<div class="logos">
+
+<img src="assets/logos/Schmidt_Sciences_wordmark.png" height="200" style="background: white">
+
+</div>
+
+
+:::
+Using MIME's timeline, we can easily analyze a production in terms of repetetive gestures. Pina Bausch is famous for her use of repetition. There's a popular quote often attritubed to Pina Bausch that "Repetition is not repetition... The same action makes you feel something completely different by the end." A researcher can simply select a specific pose in the production, and the timeline will show where else the pose shows up in the performance. You can jump easily to those spots in the performance, or you use it chart certain thematic recurrances. The timeline view gives you a distant view of the performance, where you can see chart entrances and exits of performers, and as get a sense of some aspects rhythmic or thematic elements by noting what repeats within the performance and when.
+
+---
+
+
 
 ## Feature Importances: Motion and Distance (Random Forest)
 
@@ -861,46 +940,3 @@ To get at the question of exactly which elements of these feature sets the model
 <p class="stretch"><img
   src="assets/results/ava_umap.png"
 /></p>
-
-# Complications
-
-
----
-
-
-## Material and Interpretive Discrepancies
-
-<!-- .slide: data-background-video="assets/complications/PHALP_Shawn_Nobody_Knows_stacked.mp4" -->
-<!-- .slide: data-background-size="contain" -->
-<!-- .slide: data-background-video-loop -->
-<!-- .slide: class="main-title" -->
-
----
-
-
-## Tracking and Occlusion in Monocular Video
-
-<!-- .slide: data-background-video="assets/complications/fondly_phalp_opp_comparison_sbs.mp4" -->
-<!-- .slide: data-background-size="contain" -->
-<!-- .slide: data-background-video-loop -->
-<!-- .slide: class="main-title" -->
-
----
-
-
-## "Cursed" Frames (and Poses)
-
-<div class="img-row">
-
-![cursed_004863](assets/complications/cursed_004863.jpg)
-
-![cursed_083450](assets/complications/cursed_083450.jpg)
-
-![cursed_107925](assets/complications/cursed_107925.jpg)
-
-</div>
-
-:::
-
-These are cursed.
-
