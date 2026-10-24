@@ -42,7 +42,7 @@ Thank you for joining us today.
 ## ➡️ &nbsp; Materials, Inspiration: Stagings and Interpretations <!-- .element: class="fragment custom order-of-sections" -->
 
 
-## ➡️ &nbsp; Frameworks for Similarity and Concensus <!-- .element: class="fragment custom order-of-sections" -->
+## ➡️ &nbsp; Theoretical Frameworks for Similarity and Consensus <!-- .element: class="fragment custom order-of-sections" -->
 
 
 ## ➡️ &nbsp; Methods: Alignment and Pose Estimation <!-- .element: class="fragment custom order-of-sections" -->
@@ -51,7 +51,7 @@ Thank you for joining us today.
 ## ➡️ &nbsp; Analyses and Some Findings <!-- .element: class="fragment custom order-of-sections" -->
 
 
-## ➡️ &nbsp; Some Implications <!-- .element: class="fragment custom order-of-sections" -->
+## ➡️ &nbsp; Implications, Further Work <!-- .element: class="fragment custom order-of-sections" -->
 
 
 <!-- .slide: class="order-of-sections" -->
@@ -118,7 +118,7 @@ I'll hand it over to Peter to discuss our methodology.
 ---
 
 
-# Frameworks for Similarity and Concensus
+# Theoretical Frameworks for Similarity and Consensus
 
 :::
 This is where we'd discuss theoretical frameworks and concepts: "tradition dominants" and "consensus form" from folklore, "cultural attractor theory" from psychology/social science.
@@ -126,7 +126,19 @@ This is where we'd discuss theoretical frameworks and concepts: "tradition domin
 ---
 
 
-## Choreographic Transmission and Variance on Social Media
+## Choreographic Transmission and Variation on Social Media
+
+<img class="r-stretch" src="assets/previous_work/Kpop_Transmission.png" />
+
+
+:::
+K-pop!
+
+
+---
+
+
+## Choreographic Transmission and Variation on Social Media
 
 <img class="r-stretch" src="assets/previous_work/XOXO_timelines.png" />
 
@@ -138,7 +150,7 @@ K-pop!
 ---
 
 
-## Choreographic Transmission and Variance on Social Media
+## Choreographic Transmission and Variation on Social Media
 
 <img class="r-stretch" src="assets/previous_work/cover_analysis.png" />
 
@@ -231,8 +243,9 @@ Finally we adopted another embedding, this one from Google and CalTech, that pro
 ---
 
 
-## The MIME Pipeline
+## MIME: Machine Intelligence for Motion Exegesis
 
+### Processing Pipeline
 
 <ul style="margin-top:2rem">
   <li><strong style="font-size:2rem">Inference Tasks</strong>
@@ -392,7 +405,7 @@ Recently, we have been looking at the footage of Ted Shawn, a choreographer and 
 
 <div class="img-row">
 
-Plots of the prevalences of the Shawn/Delsarte "Reflection" pose archetype<br> in the two dance recordings from the previous slide<br> (Ted Shawn in his "Nobody Knows" in 1938, and Davon Rainey in the same in 2016)
+Plots of the prevalences of the Shawn/Delsarte "Reflection" pose archetype<br> in the two dance recordings from the previous slide
 ![MIME pose prevalence charts](assets/results/Shawn_Nobody_MIME.png "MIME pose prevalence charts")
 
 </div>
