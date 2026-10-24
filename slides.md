@@ -558,11 +558,43 @@ As a final analytical output of the effort just described, we can plot the pose 
 <img class="stretch" src="assets/results/all_poses_chroma_avg_poem_sim.png" />
 
 :::
-As a final analytical output of the effort just described, we can plot the pose or motion similarities of each of the 7 performances to the average  "consensus" performance across the entire work (the dashed lines are scene and act boundaries). This is still a work in progress, but we can use this analysis to detect patterns such as certain scenes in which stagings are more likely to deviate from the consensus poses, and eventually use this to highlight automatically where directors might use especially distinctive poses and actions.
-
 
 ---
 
+
+## A most similar (invariant) section
+
+<!-- .slide: data-background-video="assets/KH_invariant_1.mp4" -->
+<!-- .slide: data-background-size="contain" -->
+<!-- .slide: data-background-video-loop -->
+<!-- .slide: class="main-title" -->
+
+:::
+
+---
+
+## A most similar (invariant) section
+
+<!-- .slide: data-background-video="assets/KH_invariant_2_dance.mp4" -->
+<!-- .slide: data-background-size="contain" -->
+<!-- .slide: data-background-video-loop -->
+<!-- .slide: class="main-title" -->
+
+:::
+
+---
+
+
+## A highly dissimilar (variant) section
+
+<!-- .slide: data-background-video="assets/KH_variant.mp4" -->
+<!-- .slide: data-background-size="contain" -->
+<!-- .slide: data-background-video-loop -->
+<!-- .slide: class="main-title" -->
+
+:::
+
+---
 
 
 
