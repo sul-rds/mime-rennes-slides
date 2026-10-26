@@ -540,11 +540,11 @@ As a final analytical output of the effort just described, we can plot the pose 
 
 <div class="r-stack">
   <img
-    src="assets/methods/PinaBauschKontakhof65.upscaled.mp4_poses_chroma_comparison.png"
+    src="assets/methods/PinaBauschKontakhof65.upscaled.mp4_poses_chroma_comparison.png" height="500"
   />
   <img
     class="fragment"
-    src="assets/results/PinaBauschKontakhof65.upscaled.mp4_pose_warping_path.png"
+    src="assets/results/PinaBauschKontakhof65.upscaled.mp4_pose_warping_path.png" height="600"
   />
 </div>
 
