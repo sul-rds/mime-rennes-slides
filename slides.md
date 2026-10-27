@@ -6,7 +6,12 @@
 <!-- .slide: class="main-title" -->
 
 :::
+Talk abstract:
 Advances in pose tracking, action recognition and gesture detection for "in-the-wild" monocular videos continue to improve the precision and consistency of such data inferred from recordings of theater performances. An initial focus of the MIME (Machine Intelligence for Motion Exegesis) project, building upon related work in dance and other cultural forms, involved examining notions of directorial and actorly style via derived motion statistics and embeddings of pose and action characteristics across a corpus of full-length theater recordings. This seminar will review work done so far and present further applications of these methods in analytical and archival contexts. One of the subsequent inquiries involves distilling a "consensus form" of different stagings of the same work by consolidating and averaging pose and action profiles across multiple renditions, aligned in whole or in part via accompanying modalities such as audio and text. Examining a performance's points of conformity to and deviation from the consensus can lead to new insights regarding its influences and the details of its staging. Another approach considers how notions of the similarity of poses, actions and gestures are operationalized and deployed at scale across archives of performances. The efforts to be detailed in the seminar prioritize supporting diverse search algorithms and strategies (such as similarity to a contemporaneous example, to an historical archetype, or to a sketch), generous visual and text-based exploration interfaces, and the maximum practicable degree of flexility regarding search parameters, models, and feature importance.
+
+Thanks to Giacomo and Prof. Clarisse for inviting and hosting us. We're excited to be part of this seminar series and to contribute to the discussions that are happening today and tomorrow.
+
+The "Reworking" in the title of this talk indicates that we're considering theatrical works of drama and dance (including opera) that (like nearly all such works) are restaged and reperformed in different ways over time. It also references that we're revisiting prior research work on this topic that we pursued in the past, but largely dropped in favor of our distant/narrow-viewing investigation into pose-related indicators of directorial style. We're returning to it now, equipped with more tools for computational humanities/cultural analytics analyses.
 
 ---
 
@@ -83,7 +88,12 @@ Thank you for joining us today.
 <!-- .slide: data-transition="slide-in fade-out" -->
 
 :::
-To answer this question, we turned to computer vision algorithms to precisely detect actor poses for every frame of an archival theatrical production. Our methodology runs pose detection on numerous videos, generating hundreds of thousands of poses, then sifts through that data to draw meaningful conclusions. Our work doesn't just focus on one meaningful pose or tableaux but instead seeks to understand the aggregate effect of all poses throughout a production, and across multiple productions by the same director or different interpretations by different directors. This brings us closer to identifying the director's contribution to pose in theater, and to think about aesthetics as systemic practice, not just “great moments.”.
+As mentioned, our previous work involves using computer vision algorithms to precisely detect actor poses for every frame of an archival theatrical production. Our methodology runs pose detection on numerous videos, generating hundreds of thousands of poses, then sifts through that data to draw meaningful conclusions. Our work doesn't just focus on one meaningful pose or tableaux but instead seeks to understand the aggregate effect of all poses throughout a production, and across multiple productions by different directors, and in thie case of the work we'll focus on today, multiple productions of the same work at different times, usually (but not necessarily) by different directors and performers.
+
+In addition to bringing us closer to identifying the director's contribution to pose in theater, this approach enables us to think about aesthetics as systemic practice, not just “great moments.”
+
+!!! (from PB - not sure this is all that useful, or if it will just be lost in the merge, but I figured I'd leave it here for now)
+But conversely, considering multiple performances of the same work allows us to examine notions of "great moments" and particularly to approach the question of whether certain moments, or aspects of those moments (or of the work more broadly), such as pose and motion, are held more "constant" and are subject to less variation and reinterpretation across a work's history of performances than other elements of the work. Might this lower degree of variation suggest that these elements constitute the core "essence" of the work, at least across a particular time period? And therefore the other elements of the work are less essential? And what might a "distant" view of the essential elements of a work look like?
 
 
 ---
@@ -113,15 +123,29 @@ To answer this question, we turned to computer vision algorithms to precisely de
 By leveraging pose estimation and action recognition, we can quantify theatrical performance aspects previously left to subjective interpretation. We analyze not just individual poses, but movement patterns, spatial relationships between performers, and production rhythm and flow. We can use pose analysis to distinguish between different directors' work, regardless of actors, text, or designers, getting closer to understanding specific directorial contributions. Moreover, looking at pose through MIME allows to examine a performance in a way that is shareable (across scholars, artists and archivists), reviewable (we can all point at the same segment/metric), debatable (people can now contest what the metric means). I see our work as making a methodological contribution to theatre studies, by building an evidence object that sits between the video footage, the actual performance itself, and the prose.
 
 
-I'll hand it over to Peter to discuss our methodology.
-
 ---
 
 
 # Theoretical Frameworks for Similarity and Consensus
 
 :::
-This is where we'd discuss theoretical frameworks and concepts: "tradition dominants" and "consensus form" from folklore, "cultural attractor theory" from psychology/social science.
+
+!!! This is where we'd discuss theoretical frameworks and concepts: "tradition dominants" and "consensus form" from folklore, "cultural attractor theory" from psychology/social science.
+
+PB: I'm not sure whether there's really a need to delve very far into folkloristic theory here, but we can name-drop some concepts.
+
+Definition of folklore (Tangherlini et al.): Informal cultural expressive forms circulating over time on and across social networks. 
+
+Full-length works of theater and dance are not "informal" and typically need to be highly abstracted (e.g., as a plot summary) or excerpted to be treated within the rather constrained analytical scope of most folkloristic methods. But there's still interpretive value in considering the process of adapting such works as a folkloric phenomenon, especially given that interpretations/stagings (as well as the performers) do "circulate" within creative social networks (as recordings, as recollections and reviews) and influence subsequent performances.
+
+Folklore theory and practice generally assumes that storytellers/informants comprise a close homogeneous group -- again, this probably is only partially true for creative networks in theater. Under this assumption, Swedish ethnologist Albert Eskeröd asserted that over repeated tellings of stories, "tradition dominants" emerge, encompassing shared beliefs and perspectives (Årets äring: etnologiska studier i skördens och julens tro och sed, _The Year's Crop: Ethnological Research into Traditions at Harvest-time and Christmas_, 1947). 
+
+Twentieth-century ethnological practice recognized that folklore emerges from the dialectic tension between individuals and tradition (Charles W. Chesnutt, "Superstitions and Folklore of the South", 1901). While individuals try to push the boundaries of what may be acceptable to the group, tradition is conservative, and exerts a cultural force that aims toward consensus. Through this process of give and take, a folkloric form such as a legend comes to act as "a symbolic representation of folk belief and collective experiences, and serves as a reaffirmation of commonly held values within the tradition group." (Timothy R. Tangherlini, _Interpreting Legend: Danish Storytellers and Their Repertoires_, 1994). 
+
+!!! MR to discuss Cultural Attractor Theory -- if desired.
+
+Peter now will discuss some prior work that proved to be relevant, and to describe our methodology.
+
 
 ---
 
@@ -397,7 +421,7 @@ Davon Rainey: <br>"Nobody Knows"<br> in 2016
 </div>
 
 :::
-Recently, we have been looking at the footage of Ted Shawn, a choreographer and dancer who was influenced by the work of Delsarte. Ted Shawn later went on to influence many strains of modern american dance, and in recent years there's been a revival of interest in his work, as well as some remountings of his dances.
+Previously, we considered early footage of Ted Shawn (1891-1972), the American choreographer and dancer who started the Denishawn School with his wife Ruth St. Denis, which was strongly influenced by the work of Francois Delsarte (1811-1871). They went on to influence many strains of modern american dance, and in recent years there's been a revival of interest in Shawn's work, as well as some remountings (reworkings?) of his dances.
 
 ---
 
@@ -447,7 +471,7 @@ Plots of the prevalences of the Shawn/Delsarte "Reflection" pose archetype<br> i
 :::
 
 
-Another case study sort of inverts the previous approach and instead considers what MIME can reveal when comparing staging from seven different directors who were all directing the same work -- in this case Mozart and Da Ponte's Don Giovanni from 1787.
+Zooming out from this close pose-related analysis and comparison of Shawn's choreography, we also compared stagings of a full-length theatrical work from seven different directors -- who in this case were all staging Mozart and Da Ponte's Don Giovanni from 1787.
 
 The screenshots below show some pose estimation output from each of the directors' stagings -- note that in every case this is the same scene, from the finale of Act I.
 
@@ -487,9 +511,11 @@ The table above gives derived statistics of the performances, highlighting entri
 
 
 :::
-Comparing the performances of Don Giovanni involved aligning all of them down to the sub-second level, specifically so that we could calculate the average poses and actions deployed at each moment of the opera -- building what folklorists refer to as the "consensus performance" or "tradition dominant" of a cultural expressive form -- and then compute the degree to which each director's staging deviates from this consensus at each moment.
+Comparing the performances of Don Giovanni involved aligning all of them down to the sub-second level using the same pitch chroma/Dynamic Time Warping-based techniques previously applied to K-pop cover dances on TikTok
+!!! at some point we'll discuss how we considered the variations in tempo among works that this approach deliberately irons out.
+so that we could calculate the average poses and actions deployed at each moment of the opera -- in an attempt to find the choreographic "consensus performance" of this tradition. We also then computed the degree to which each director's staging deviates from this consensus at each moment, as part of our earlier study of directorial style.
 
-Practically speaking, the easiest way to align the recordings, which only works because the work is an opera, is to extract the musical pitches heard at each timecode and apply the dynamic time warping algorithm to match the pitch chroma of different performances to compute a warping path that allows us to align them despite significant differences in tempo, non-musical action (e.g., intermission), and the occasional omission of certain scenes.
+As just mentioned, the easiest way to align the recordings, which only works because the work is an opera, was to extract the musical pitches heard at each timecode and apply the dynamic time warping algorithm to match the pitch chroma of different performances to compute a warping path that allows us to align them despite significant differences in tempo, non-musical action (e.g., intermission), and the occasional omission of certain scenes.
 
 
 ---
@@ -601,6 +627,7 @@ As a final analytical output of the effort just described, we can plot the pose 
 # Complications
 
 :::
+!!! How much of this to keep? Possibly modify?
 
 In all applications using AI, it's important to acknowledge ethical considerations and limitations. Like all AI, there's danger in incorrect pose estimations and hallucination. Working with archival materials requires careful navigation—we've developed clear guidelines ensuring respectful, responsible use.
 
@@ -617,8 +644,12 @@ The difficulty identifying gesture and motion. What we're looking for is, stable
 
 
 :::
-To return to the examples I started with, Bob Fosse shoulder rolls, or Brecht's silent scream are ways in which scholars use examples to illustrate an idea about a performer's work. However these depend on selective attention and “memorable moments.
+!!! MR possibly provide summary/closing thoughts, implications, further considerations
+
+To return to the examples I started with, Bob Fosse shoulder rolls, or Brecht's silent scream are ways in which scholars use examples to illustrate an idea about a performer's work. However these depend on selective attention and "memorable moments".
+
 pose-derived representations can expose the selectivity of critical description by contrasting salience vs prevalence.
+
 Use pose similarity functions, to identify recurring poses, symmetry, and the rhythmic ebb and flow of staging. We can identify aggegrate stylistic elements that define a director's output, separating their unique contribution from performers' work or textual constraints. We can identify poses that make reference to historical movements and style and trace the evolution of a choreography. MIME also enables objective comparisons between different directors' interpretations, revealing new dimensions of artistic expression.
 
 We can compare different directors' versions to show how physical expression and spatial storytelling evolve over time, across cultures, or in canonical works. Scholars could examine how themes or characters are represented physically—for instance, how kings are staged to show varying representations of power between productions.
