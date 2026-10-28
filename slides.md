@@ -182,9 +182,19 @@ K-pop!
 :::
 Corpus: 10 TikTok dance challenges, 5-20 cover dances per challenge = 133 single-dancer TikTok covers + 10 demonstration videos 
 
-Correlation (Pearson’s) of cover/demonstration pose similarity vs. motion in cover dance -- r: .04, p: 5.56e-39 – significant but very wea
+Correlation (Pearson’s) of cover/demonstration pose similarity vs. motion in cover dance -- r: .04, p: 5.56e-39 – significant but very weak.
 
 ---
+
+# Performance Invariance
+
+:::
+A performance work is, operationally, what persists across its re-performances. Performers, costumes, tempo, historical moment, audience and individual choices all change. Whatever survives that churn is the invariant. 
+
+Richard Schechner has a wide quoted definition of performance that it is ""twice-behaved behavior."  The invariants idea tries to put numbers on that definition: what, exactly, is the "twice" repeating?
+
+We see new strands forming: . 1. Who is dancing? This is stylometry and attribution: identify the dancer, the director, the style.
+2. What is the dance? This is invariance and transmission: identify what survives across bodies.
 
 
 # Methods
@@ -400,9 +410,9 @@ Michael's now going to show us some of the ways he's been able to make use of th
 ## Recurring Poses and Thematic Pose Analysis
 
 <video data-autoplay controls muted src="assets/Bausch4.mp4"></video>
+
 :::
 Using MIME's timeline, we can easily analyze a production in terms of repetetive gestures. Pina Bausch is famous for her use of repetition. There's a popular quote often attritubed to Pina Bausch that "Repetition is not repetition... The same action makes you feel something completely different by the end." A researcher can simply select a specific pose in the production, and the timeline will show where else the pose shows up in the performance. You can jump easily to those spots in the performance, or you use it chart certain thematic recurrances. The timeline view gives you a distant view of the performance, where you can see chart entrances and exits of performers, and as get a sense of some aspects rhythmic or thematic elements by noting what repeats within the performance and when.
-
 
 
 ---
@@ -782,7 +792,6 @@ The Application and API server is a container that has all our machine-learning 
 The container is also home to a Jupyter Notebook server and a FastAPI server that exposes the endpoints that are consumed by our web interface
 
 
-
 ---
 
 
@@ -844,33 +853,27 @@ Action recognition embeddings
 </div>
 
 :::
-Here are some further leave-one-out classification experiments with the 3D pose coordinates and action recognition vectors used as features.
-The action recognition embeddings do seem to be somewhat better than the 3D coordinates for telling the directors apart.
-
+As a final analytical output of the effort just described, we can plot the pose or motion similarities of each of the 7 performances to the average  "consensus" performance across the entire work (the dashed lines are scene and act boundaries). This is still a work in progress, but we can use this analysis to detect patterns such as certain scenes in which stagings are more likely to deviate from the consensus poses, and eventually use this to highlight automatically where directors might use especially distinctive poses and actions.
 
 ---
 
 
-## Which Features Are Best for Differentiating between Directors?
+## Material and Interpretive Discrepancies
 
-<img class="r-stretch" src="assets/results/classification_experiments.png" />
-
-:::
-Here are some results with slightly more sophisticated classification algorithms and using 10-fold cross-validation with different random seeds to try to get a better sense of how these approaches might perform with a larger, more diverse dataset. They do suggest that some algorithms are better at detecting some aspects of even the large-scale motion and distance data that differentiate directors, so that is worth exploring further, while the effectiveness of the embedding-based inputs does drop a bit when the training set is small.
-
-
+<!-- .slide: data-background-video="assets/complications/PHALP_Shawn_Nobody_Knows_stacked.mp4" -->
+<!-- .slide: data-background-size="contain" -->
+<!-- .slide: data-background-video-loop -->
+<!-- .slide: class="main-title" -->
 
 ---
 
 
-## Collinearity of Motion and Distance Features
+## Tracking and Occlusion in Monocular Video
 
-<p class="stretch"><img
-  src="assets/results/feature_collinearity.png"
-/></p>
-
-:::
-We also can run some tests to evaluate which features are collinear, in that their contributions to the classifications tend to point in the same directions, indicating that some of them may be redundant. It's also interesting to note that for example the simultaneous motion features are not particularly collinear with the raw motion features, so probably it's worth keeping both of them as inputs to the classifier.
+<!-- .slide: data-background-video="assets/complications/fondly_phalp_opp_comparison_sbs.mp4" -->
+<!-- .slide: data-background-size="contain" -->
+<!-- .slide: data-background-video-loop -->
+<!-- .slide: class="main-title" -->
 
 ---
 
@@ -964,11 +967,7 @@ Here you can see two different "thumbprints"--that demonstrate the the differenc
 </div>
 
 
-:::
-Using MIME's timeline, we can easily analyze a production in terms of repetetive gestures. Pina Bausch is famous for her use of repetition. There's a popular quote often attritubed to Pina Bausch that "Repetition is not repetition... The same action makes you feel something completely different by the end." A researcher can simply select a specific pose in the production, and the timeline will show where else the pose shows up in the performance. You can jump easily to those spots in the performance, or you use it chart certain thematic recurrances. The timeline view gives you a distant view of the performance, where you can see chart entrances and exits of performers, and as get a sense of some aspects rhythmic or thematic elements by noting what repeats within the performance and when.
-
 ---
-
 
 
 ## Feature Importances: Motion and Distance (Random Forest)
