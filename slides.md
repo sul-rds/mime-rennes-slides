@@ -197,6 +197,8 @@ We see new strands forming: . 1. Who is dancing? This is stylometry and attribut
 2. What is the dance? This is invariance and transmission: identify what survives across bodies.
 
 
+---
+
 # Methods
 
 
@@ -569,6 +571,8 @@ As a final analytical output of the effort just described, we can plot the pose 
 :::
 The case we've been considering lately is kind of a mixture of the two we've presented so far: the performances to be considered are long-form and multi-performer, like the Don Giovanni corpus, but consist only of two performances, the first of which can be considered the "orginal," as with the Ted Shawn "Nobody Knows" recordings. Here we're looking at performances of Pina Bausch's Kontakthof; one is from a television broadcast of the original staging from 1978, and the second is from the production "With Ladies and Gentlemen over 65" first staged in 2000 in Wuppertal.
 
+Here we can see an example of pose- and motion-related parallelism between these two performances. Just by flipping back and forth, we can see that the moments of greater synchronized motion (measured as the average correlation of in-place joint rotations per person on screen, observed approximately 6 times per second, then smoothed twice to get less jittery results) occur at roughly the same points in both performances. It also seems that the younger actors are a bit more synchronized, although the difference is small and could just be an artifact of the different recording conditions of the two performances.
+
 ---
 
 
@@ -858,26 +862,6 @@ As a final analytical output of the effort just described, we can plot the pose 
 ---
 
 
-## Material and Interpretive Discrepancies
-
-<!-- .slide: data-background-video="assets/complications/PHALP_Shawn_Nobody_Knows_stacked.mp4" -->
-<!-- .slide: data-background-size="contain" -->
-<!-- .slide: data-background-video-loop -->
-<!-- .slide: class="main-title" -->
-
----
-
-
-## Tracking and Occlusion in Monocular Video
-
-<!-- .slide: data-background-video="assets/complications/fondly_phalp_opp_comparison_sbs.mp4" -->
-<!-- .slide: data-background-size="contain" -->
-<!-- .slide: data-background-video-loop -->
-<!-- .slide: class="main-title" -->
-
----
-
-
 ## Feature Importances: View-Invariant Pose Embeddings
 
 <div class="img-row">
@@ -914,57 +898,6 @@ The collinearity analysis is similar not very insightful when we're considering 
 To explore how the directors' pose "repertoires" might be distributed through the view-invariant pose embedding space, and hopefully get a better sense of what aspects of these embeddings were helping to differentiate the directors, we plotted a sample of all of their pose embeddings into a 2D space via UMAP projection as color-coded dots. The larger hexagons represent each director's overall average pose embedding. Although we can't directly translate these average points into poses, we can search for the most similar poses to them from the entire data set thanks to MIME's powerful vector database, and we've shown some of those here in the callouts.
 
 This projection does seem to reveal useful observations, like the overall greater similarity between Castellucci’s and Warlikowski’s pose repertoires relative to Jones’s, and the callouts highlight how Jones tends to employ dramatically contorted poses, Castellucci to favor hunched-over standing postures, and Warlikowski to deploy figures in an active sitting position.
-
-
----
-
-
-## Hands and Delsarte
-
-<div class="img-row">
-
-Delsarte Pose
-![Pose motion and distance feature importances](assets/results/delsarte_exercises.jpg "Poses from Delsarte Instruction Manual")
-
-MIME Detection
-![Hands inclusion](assets/results/Delsarte_results.png "Delsarte Comparison")
-
-</div>
-
-:::
-One of the more recent developments that we've been working on with MIME is to take the 19th century pose system, invented by Francois Delsarte that has a long, influential and bizarre history, and to use those diagrams of poses that he invented and see where they showed up in our contemporary work. The delsarte system has a series of codified full-figure and hand poses, that express certain ideas and emotions and using the search function of MIME, we were able to identify precisely where and when certain actors would arrive in Delsarte poses. These results allowed us to create "Delsarte Thumbprints" to not only see which gestures are reminiscient of Delsarte's choreography, and to track the frequency through which they appear in a production.
-
----
-
-
-## Delsarte Thumbprint
-
-<div class="img-row">
-
-Bill T Jones's Fondly Do We Hope
-![Pose frequency throughout the work](assets/results/Fondly2.png "Poses from Delsarte Instruction Manual")
-
-Romeo Castellucci's Democracy in America
-![Hands inclusion](assets/results/Castellucci-Delsarte.png "Delsarte Comparison")
-
-</div>
-
-:::
-Here you can see two different "thumbprints"--that demonstrate the the difference quantities of pose throughout the show. Bill T. Jones' production shows far more "Prostration" than Castellucci. And Castellucci's production features far more poses of supplication. And while it may seem a little silly to use these 19th century melodramatic poses to analize a works of contemporary theater, this method points towards ways in which this technology could be used to trace the genelogy of artistic movements, and the subtle ways that historical aesthetics shape our contemprary tastes.
-
-
----
-
-
-## Improving Motion Modeling
-
-<video data-autoplay controls muted src="assets/Johana19_ST_MC_W_V1m_P_S_triptych.mp4"></video>
-
-<div class="logos">
-
-<img src="assets/logos/Schmidt_Sciences_wordmark.png" height="200" style="background: white">
-
-</div>
 
 
 ---
@@ -1019,3 +952,62 @@ To get at the question of exactly which elements of these feature sets the model
 <p class="stretch"><img
   src="assets/results/ava_umap.png"
 /></p>
+
+---
+
+
+## Hands and Delsarte
+
+<div class="img-row">
+
+Delsarte Pose
+![Pose motion and distance feature importances](assets/results/delsarte_exercises.jpg "Poses from Delsarte Instruction Manual")
+
+MIME Detection
+![Hands inclusion](assets/results/Delsarte_results.png "Delsarte Comparison")
+
+</div>
+
+:::
+One of the more recent developments that we've been working on with MIME is to take the 19th century pose system, invented by Francois Delsarte that has a long, influential and bizarre history, and to use those diagrams of poses that he invented and see where they showed up in our contemporary work. The delsarte system has a series of codified full-figure and hand poses, that express certain ideas and emotions and using the search function of MIME, we were able to identify precisely where and when certain actors would arrive in Delsarte poses. These results allowed us to create "Delsarte Thumbprints" to not only see which gestures are reminiscient of Delsarte's choreography, and to track the frequency through which they appear in a production.
+
+---
+
+
+## Delsarte Thumbprint
+
+<div class="img-row">
+
+Bill T Jones's Fondly Do We Hope
+![Pose frequency throughout the work](assets/results/Fondly2.png "Poses from Delsarte Instruction Manual")
+
+Romeo Castellucci's Democracy in America
+![Hands inclusion](assets/results/Castellucci-Delsarte.png "Delsarte Comparison")
+
+</div>
+
+:::
+Here you can see two different "thumbprints"--that demonstrate the the difference quantities of pose throughout the show. Bill T. Jones' production shows far more "Prostration" than Castellucci. And Castellucci's production features far more poses of supplication. And while it may seem a little silly to use these 19th century melodramatic poses to analize a works of contemporary theater, this method points towards ways in which this technology could be used to trace the genelogy of artistic movements, and the subtle ways that historical aesthetics shape our contemprary tastes.
+
+
+---
+
+## Another Complication: Tracking and Occlusion in Monocular Video
+
+<!-- .slide: data-background-video="assets/complications/fondly_phalp_opp_comparison_sbs.mp4" -->
+<!-- .slide: data-background-size="contain" -->
+<!-- .slide: data-background-video-loop -->
+<!-- .slide: class="main-title" -->
+
+---
+
+
+## Improving Motion Modeling
+
+<video data-autoplay controls muted src="assets/Johana19_ST_MC_W_V1m_P_S_triptych.mp4"></video>
+
+<div class="logos">
+
+<img src="assets/logos/Schmidt_Sciences_wordmark.png" height="200" style="background: white">
+
+</div>
