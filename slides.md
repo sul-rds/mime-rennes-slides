@@ -557,7 +557,7 @@ As a final analytical output of the effort just described, we can plot the pose 
 </div>
 
 :::
-
+The case we've been considering lately is kind of a mixture of the two we've presented so far: the performances to be considered are long-form and multi-performer, like the Don Giovanni corpus, but consist only of two performances, the first of which can be considered the "orginal," as with the Ted Shawn "Nobody Knows" recordings. Here we're looking at performances of Pina Bausch's Kontakthof; one is from a television broadcast of the original staging from 1978, and the second is from the production "With Ladies and Gentlemen over 65" first staged in 2000 in Wuppertal.
 
 ---
 
@@ -575,6 +575,9 @@ As a final analytical output of the effort just described, we can plot the pose 
 </div>
 
 :::
+Considering this type of "Dance Theater" allowed us, and in fact encouraged us, to consider alternative methods of aligning performances and quantifying the "consensus" performance (in terms of pose/action/motion) and how and in which sections the two performances most conformed to or deviated from this consensus. Kontakthof contains a considerable amount of music, but there are also sections featuring fairly long silences or speech. An alignment system based entirely on musical pitches would miss any differences pacing between the two performances until the next shared musical section begins. So we ultimately decided on a system that combines the 12-pitch vector and the 16-element pose embedding of the person closest to the camera, after performing some normalization, at synchronized time slices between the video and audio, roughly 1/5 second.
+
+We attempted to validate our choices of alignment vectors by cross-comparing with the averaged 60-element action embedding vectors for all people in the shot; if an alignment method based on musical pitches, pose embeddings of the person closest to the camera, averaged pose embeddings, or actual normalized pose coordinates, alone or merged together (and normalized or not), produces a smaller average difference between the average action embedding vectors for each pair of aligned frames, then it's probably a better alignment strategy. The strategy we chose did in fact produce the lowest average difference, but they were all so similar to each other (within one standard deviation) that we can't be sure there's any meaningful difference between them.
 
 ---
 
@@ -584,6 +587,7 @@ As a final analytical output of the effort just described, we can plot the pose 
 <img class="stretch" src="assets/results/all_poses_chroma_avg_poem_sim.png" />
 
 :::
+Note that we applied some fairly generous smoothing to get these curves, averaging +/-5 seconds on either side of the current frame, so a segment that scores as highly invariant may nonetheless have sections of noticeable variation within it (and vice versa). Shortening the smoothing window will find increasingly smaller sections of exceptional variation or invariance. This choice (+/- 5 seconds) tended to produce the most interesting results.
 
 ---
 
