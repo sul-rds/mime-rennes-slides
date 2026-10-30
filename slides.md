@@ -88,7 +88,7 @@ Thank you for joining us today.
 <!-- .slide: data-transition="slide-in fade-out" -->
 
 :::
-As mentioned, our previous work involves using computer vision algorithms to precisely detect actor poses for every frame of an archival theatrical production. Our methodology runs pose detection on numerous videos, generating hundreds of thousands of poses, then sifts through that data to draw meaningful conclusions. Our work doesn't just focus on one meaningful pose or tableaux but instead seeks to understand the aggregate effect of all poses throughout a production, and across multiple productions by different directors, and in thie case of the work we'll focus on today, multiple productions of the same work at different times, usually (but not necessarily) by different directors and performers.
+As mentioned, our previous work involves using computer vision algorithms to precisely detect actor poses for every frame of an archival theatrical production. Our methodology runs pose detection on numerous videos, generating hundreds of thousands of poses, then sifts through that data to draw meaningful conclusions. Our work doesn't just focus on one meaningful pose or tableaux but instead seeks to understand the aggregate effect of all poses throughout a production, and across multiple productions by different directors, and in the case of the work we'll focus on today, multiple productions of the same work at different times, usually (but not necessarily) by different directors and performers.
 
 In addition to bringing us closer to identifying the director's contribution to pose in theater, this approach enables us to think about aesthetics as systemic practice, not just “great moments.”
 
@@ -136,11 +136,11 @@ PB: I'm not sure whether there's really a need to delve very far into folklorist
 
 Definition of folklore (Tangherlini et al.): Informal cultural expressive forms circulating over time on and across social networks. 
 
-Full-length works of theater and dance are not "informal" and typically need to be highly abstracted (e.g., as a plot summary) or excerpted to be treated within the rather constrained analytical scope of most folkloristic methods. But there's still interpretive value in considering the process of adapting such works as a folkloric phenomenon, especially given that interpretations/stagings (as well as the performers) do "circulate" within creative social networks (as recordings, as recollections and reviews) and influence subsequent performances.
+Full-length works of theater and dance are not "informal" and typically must be considered from a great distance (e.g., as a plot summary) or excerpted to work within the rather constrained analytical scope of most folkloristic methods. But there's still interpretive value in considering the process of adapting such works as a folkloric phenomenon, especially given that interpretations/stagings (as well as the performers) do "circulate" within creative social networks (as recordings, as recollections and reviews) and influence subsequent performances.
 
-Folklore theory and practice generally assumes that storytellers/informants comprise a close homogeneous group -- again, this probably is only partially true for creative networks in theater. Under this assumption, Swedish ethnologist Albert Eskeröd asserted that over repeated tellings of stories, "tradition dominants" emerge, encompassing shared beliefs and perspectives (Årets äring: etnologiska studier i skördens och julens tro och sed, _The Year's Crop: Ethnological Research into Traditions at Harvest-time and Christmas_, 1947). 
+Another assumption from folklore theory and practice that doesn't necessarily hold here is that storytellers/informants comprise a close homogeneous group -- which probably is only partially true for creative networks in theater. Under this assumption, Swedish ethnologist Albert Eskeröd asserted in the mid 20th century that over repeated tellings of stories, "tradition dominants" emerge, encompassing shared beliefs and perspectives (Årets äring: etnologiska studier i skördens och julens tro och sed, _The Year's Crop: Ethnological Research into Traditions at Harvest-time and Christmas_, 1947). 
 
-Twentieth-century ethnological practice recognized that folklore emerges from the dialectic tension between individuals and tradition (Charles W. Chesnutt, "Superstitions and Folklore of the South", 1901). While individuals try to push the boundaries of what may be acceptable to the group, tradition is conservative, and exerts a cultural force that aims toward consensus. Through this process of give and take, a folkloric form such as a legend comes to act as "a symbolic representation of folk belief and collective experiences, and serves as a reaffirmation of commonly held values within the tradition group." (Timothy R. Tangherlini, _Interpreting Legend: Danish Storytellers and Their Repertoires_, 1994). 
+Twentieth-century ethnological practice also recognized that folklore emerges from the dialectic tension between individuals and tradition (Charles W. Chesnutt, "Superstitions and Folklore of the South", 1901). While individuals try to push the boundaries of what may be acceptable to the group, tradition is conservative, and exerts a cultural force that aims toward consensus. Through this process of give and take, a folkloric form such as a legend comes to act, in the words of Timothy Tangherlini as "a symbolic representation of folk belief and collective experiences, and serves as a reaffirmation of commonly held values within the tradition group." (Timothy R. Tangherlini, _Interpreting Legend: Danish Storytellers and Their Repertoires_, 1994). 
 
 !!! MR to discuss Cultural Attractor Theory -- if desired.
 
@@ -156,7 +156,9 @@ Peter now will discuss some prior work that proved to be relevant, and to descri
 
 
 :::
-K-pop!
+Previous work considering the social media dance challenges that exploded in popularity during the COVID-19 pandemic.
+
+Here we have a pretty direct folkloric analog, albeit one in which slavish devotion to the source form of the dance is highly rewarded, as the challenges can be more technical/athletic in nature than interpretive. Yet some interpretation and individual boundary-pushing does appear (and can be rewarded in its own way).
 
 
 ---
@@ -170,6 +172,8 @@ K-pop!
 :::
 K-pop!
 
+One evocative way of visualizing the consensus in these single-dancer works is just to synthesize an animated or photorealistic (deepfake) avatar performing the average of all synchronized dances. This was fairly difficult to do well when we began the research (and the results of doing this kind of thing badly with human forms can be pretty groteseque). But nowadays it's not so difficult. We might even consider how to visualize the sections at which the variation is greater, perhaps as transparent variant "ghosts" overlaid on the conservative average poses. But for the moment this is "future work."
+
 
 ---
 
@@ -180,6 +184,8 @@ K-pop!
 
 
 :::
+Distant viewing results (for a fairly small corpus of 143 single-dancer performances of 10 challenges).
+
 Corpus: 10 TikTok dance challenges, 5-20 cover dances per challenge = 133 single-dancer TikTok covers + 10 demonstration videos 
 
 Correlation (Pearson’s) of cover/demonstration pose similarity vs. motion in cover dance -- r: .04, p: 5.56e-39 – significant but very weak.
