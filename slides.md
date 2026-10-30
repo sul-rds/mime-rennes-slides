@@ -467,6 +467,16 @@ Plots of the prevalences of the Shawn/Delsarte "Reflection" pose archetype<br> i
 
 ---
 
+<!-- .slide: data-background-video="assets/complications/Shawn_Nobody_Knows_SAM_side_comparison_labeled.mp4" -->
+<!-- .slide: data-background-size="contain" -->
+<!-- .slide: data-background-video-loop -->
+<!-- .slide: class="main-title" -->
+
+:::
+This was originally meant to be a "complication" slide, but maybe it's just better used to illustrate both the abilities and shortcomings of monocular motion tracking when used to compare performance versions from (vastly) different eras. Except for the part at the end where the 1938 version goes haywire, though, the cautionary message of this kind of demo is somewhat muted because the Shawn choreography turns out to be pretty "monocular-friendly" -- few occluded limbs, little Z-axis motion, like the best TikTok videos (!), so the side renders actually turn out pretty well.
+
+---
+
 
 ## Direct Comparison: Multiple Directors' Stagings of the Same Work
 
@@ -995,15 +1005,6 @@ Romeo Castellucci's Democracy in America
 :::
 Here you can see two different "thumbprints"--that demonstrate the the difference quantities of pose throughout the show. Bill T. Jones' production shows far more "Prostration" than Castellucci. And Castellucci's production features far more poses of supplication. And while it may seem a little silly to use these 19th century melodramatic poses to analize a works of contemporary theater, this method points towards ways in which this technology could be used to trace the genelogy of artistic movements, and the subtle ways that historical aesthetics shape our contemprary tastes.
 
-
----
-
-## Another Complication: Tracking and Occlusion in Monocular Video
-
-<!-- .slide: data-background-video="assets/complications/fondly_phalp_opp_comparison_sbs.mp4" -->
-<!-- .slide: data-background-size="contain" -->
-<!-- .slide: data-background-video-loop -->
-<!-- .slide: class="main-title" -->
 
 ---
 
