@@ -95,6 +95,8 @@ In addition to bringing us closer to identifying the director's contribution to 
 !!! (from PB - not sure this is all that useful, or if it will just be lost in the merge, but I figured I'd leave it here for now)
 But conversely, considering multiple performances of the same work allows us to examine notions of "great moments" and particularly to approach the question of whether certain moments, or aspects of those moments (or of the work more broadly), such as pose and motion, are held more "constant" and are subject to less variation and reinterpretation across a work's history of performances than other elements of the work. Might this lower degree of variation suggest that these elements constitute the core "essence" of the work, at least across a particular time period? And therefore the other elements of the work are less essential? And what might a "distant" view of the essential elements of a work look like?
 
+(from Michael:)
+The other thing that MIME can allow for, is to identify that there are sections beyond the "great moments" - that we can roughly approximate with Kontakhof, and could do for other works, and there's a probably a whole other area of exploration for the areas in the mid-50 percent that examine "the drift" from the original work. and quanitifying that could also be fascinating. 
 
 ---
 
@@ -143,6 +145,18 @@ Another assumption from folklore theory and practice that doesn't necessarily ho
 Twentieth-century ethnological practice also recognized that folklore emerges from the dialectic tension between individuals and tradition (Charles W. Chesnutt, "Superstitions and Folklore of the South", 1901). While individuals try to push the boundaries of what may be acceptable to the group, tradition is conservative, and exerts a cultural force that aims toward consensus. Through this process of give and take, a folkloric form such as a legend comes to act, in the words of Timothy Tangherlini as "a symbolic representation of folk belief and collective experiences, and serves as a reaffirmation of commonly held values within the tradition group." (Timothy R. Tangherlini, _Interpreting Legend: Danish Storytellers and Their Repertoires_, 1994). 
 
 !!! MR to discuss Cultural Attractor Theory -- if desired.
+
+Associated with anthropologist Dan Sperber and the study of cultural transmission, cultural attractor theory begins with an observation: culture is not transmitted through perfect copying. People interpret, remember, adapt, and reconstruct what they receive. Yet these transformations are not entirely random. They often move toward recurring forms that are especially memorable, emotionally resonant, culturally familiar, or supported by institutions.
+
+An “attractor” is that recurring pattern toward which versions tend to converge. It is not necessarily an intrinsic quality of a masterpiece, and it does not mean that everyone naturally prefers the same things. Attractors emerge from the relationship between human capacities, learned expectations, and particular social and material environments.
+
+What keeps returning across performances, and what conditions make those features likely to return?
+
+Preservation: deliberate efforts to maintain choreography and performance knowledge.
+Attraction: patterned tendencies in what people remember, interpret, and reproduce.
+Institutional selection: decisions about which works receive funding, rehearsal time, touring opportunities, and visibility.
+These processes interact, but they are not identical. Repetition alone does not prove that a work is a cultural attractor; we would need to examine how versions change and why particular features recur.
+
 
 Peter now will discuss some prior work that proved to be relevant, and to describe our methodology.
 
@@ -691,6 +705,11 @@ We can compare different directors' versions to show how physical expression and
 This technology could chart how actors' physical choices evolve through rehearsals. Given the precision of the timeline view, we can correlate pose data with audience response—applause or laughter—to see which physical expressions elicit the strongest responses, deepening our understanding of audience engagement.
 
 It creates an unprecedented record of a production's physical language. This “movement score” that is: shareable (across directors, academics, archivists), reviewable (you can point to the same extracted segment/metric), debatable (people can contest what the metric means). This is kind of evidence object that sits between video and prose. This is valuable for future research, teaching, or restaging. Beyond theater, this methodology could be adapted to film, opera, dance, and other movement-based arts. It could also apply to diverse fields from political speeches to sports biomechanics.
+
+Invariant issues/questions
+What does "same work" mean when the score changes between productions (cuts, translations, adaptations)?
+- Can an invariant be *wrong*, i.e. a feature of the filming (camera angle, stage geometry) rather than the work?
+- Is the goal to describe the work or to preserve it?
 
 
 While this research presents exciting quantitative analysis possibilities, its true value lies in complementing traditional scholarly approaches. By integrating computational methods with human interpretation, we develop a more comprehensive understanding of theatrical performance and directorial style, enriching both academic discourse and artistic practice.
