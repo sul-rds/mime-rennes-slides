@@ -6,9 +6,12 @@
 <!-- .slide: class="main-title" -->
 
 :::
+NOTE: Need to advance to slide #2 and then go back to #1 to make the video play on the title slide.
+
 Talk abstract:
 Advances in pose tracking, action recognition and gesture detection for "in-the-wild" monocular videos continue to improve the precision and consistency of such data inferred from recordings of theater performances. An initial focus of the MIME (Machine Intelligence for Motion Exegesis) project, building upon related work in dance and other cultural forms, involved examining notions of directorial and actorly style via derived motion statistics and embeddings of pose and action characteristics across a corpus of full-length theater recordings. This seminar will review work done so far and present further applications of these methods in analytical and archival contexts. One of the subsequent inquiries involves distilling a "consensus form" of different stagings of the same work by consolidating and averaging pose and action profiles across multiple renditions, aligned in whole or in part via accompanying modalities such as audio and text. Examining a performance's points of conformity to and deviation from the consensus can lead to new insights regarding its influences and the details of its staging. Another approach considers how notions of the similarity of poses, actions and gestures are operationalized and deployed at scale across archives of performances. The efforts to be detailed in the seminar prioritize supporting diverse search algorithms and strategies (such as similarity to a contemporaneous example, to an historical archetype, or to a sketch), generous visual and text-based exploration interfaces, and the maximum practicable degree of flexility regarding search parameters, models, and feature importance.
 
+(!PB ?)
 Thanks to Giacomo and Prof. Clarisse for inviting and hosting us. We're excited to be part of this seminar series and to contribute to the discussions that are happening today and tomorrow.
 
 The "Reworking" in the title of this talk indicates that we're considering theatrical works of drama and dance (including opera) that (like nearly all such works) are restaged and reperformed in different ways over time. It also references that we're revisiting prior research work on this topic that we pursued in the past, but largely dropped in favor of our distant/narrow-viewing investigation into pose-related indicators of directorial style. We're returning to it now, equipped with more tools for computational humanities/cultural analytics analyses.
@@ -39,7 +42,8 @@ The "Reworking" in the title of this talk indicates that we're considering theat
 
 :::
 
-Thank you for joining us today.
+!PB
+Thank you for joining us today; this is our team.
 
 ---
 
@@ -62,6 +66,7 @@ Thank you for joining us today.
 <!-- .slide: class="order-of-sections" -->
 
 :::
+!PB ?
 
 
 ---
@@ -97,7 +102,10 @@ In addition to bringing us closer to identifying the director's contribution to 
 But conversely, considering multiple performances of the same work allows us to examine notions of "great moments" and particularly to approach the question of whether certain moments, or aspects of those moments (or of the work more broadly), such as pose and motion, are held more "constant" and are subject to less variation and reinterpretation across a work's history of performances than other elements of the work. Might this lower degree of variation suggest that these elements constitute the core "essence" of the work, at least across a particular time period? And therefore the other elements of the work are less essential? And what might a "distant" view of the essential elements of a work look like?
 
 (from Michael:)
-The other thing that MIME can allow for, is to identify that there are sections beyond the "great moments" - that we can roughly approximate with Kontakhof, and could do for other works, and there's a probably a whole other area of exploration for the areas in the mid-50 percent that examine "the drift" from the original work. and quanitifying that could also be fascinating. 
+The other thing that MIME can allow for, is to identify that there are sections beyond the "great moments" - that we can roughly approximate with Kontakhof, and could do for other works, and there's a probably a whole other area of exploration for the areas in the mid-50 percent that examine "the drift" from the original work. and quanitifying that could also be fascinating.
+
+PB
+NOTE: The "Viva la liberta" chorus occurs in the Act 1 Finale (Scene 5) of Don Giovanni. There evidently is a variety of ways to stage it (and also a variety of languages in which it can be subtitled). These 6 examples do show some degree of similarity in how the performers are arranged and posed, if also a pretty wide variety of actions they are called upon to do: holding candles, throwing paper cones, and in the case of Romeo Castelucci's production, smashing a mannequin with a baseball bat. (Perhaps the variety is fitting given the story's preoccupation with liberty vs. libertinism). We're interested in what we can learn by comparing such aspects of the performances computationally.
 
 ---
 
@@ -173,6 +181,8 @@ Peter now will discuss some prior work that proved to be relevant, and to descri
 
 
 :::
+!PB
+
 Previous work considering the social media dance challenges that exploded in popularity during the COVID-19 pandemic.
 
 Here we have a pretty direct folkloric analog, albeit one in which slavish devotion to the source form of the dance is highly rewarded, as the challenges can be more technical/athletic in nature than interpretive. Yet some interpretation and individual boundary-pushing does appear (and can be rewarded in its own way).
@@ -187,8 +197,7 @@ Here we have a pretty direct folkloric analog, albeit one in which slavish devot
 
 
 :::
-K-pop!
-
+!PB
 One evocative way of visualizing the consensus in these single-dancer works is just to synthesize an animated or photorealistic (deepfake) avatar performing the average of all synchronized dances. This was fairly difficult to do well when we began the research (and the results of doing this kind of thing badly with human forms can be pretty groteseque). But nowadays it's not so difficult. We might even consider how to visualize the sections at which the variation is greater, perhaps as transparent variant "ghosts" overlaid on the conservative average poses. But for the moment this is "future work."
 
 
@@ -201,17 +210,21 @@ One evocative way of visualizing the consensus in these single-dancer works is j
 
 
 :::
+!PB
 Distant viewing results (for a fairly small corpus of 143 single-dancer performances of 10 challenges).
 
 Corpus: 10 TikTok dance challenges, 5-20 cover dances per challenge = 133 single-dancer TikTok covers + 10 demonstration videos 
 
 Correlation (Pearson’s) of cover/demonstration pose similarity vs. motion in cover dance -- r: .04, p: 5.56e-39 – significant but very weak.
 
+Now back to Michael to discuss how this notion of performance invariance can apply to theatrical performances.
+
 ---
 
 # Performance Invariance
 
 :::
+!MR
 A performance work is, operationally, what persists across its re-performances. Performers, costumes, tempo, historical moment, audience and individual choices all change. Whatever survives that churn is the invariant. 
 
 Richard Schechner has a wide quoted definition of performance that it is ""twice-behaved behavior."  The invariants idea tries to put numbers on that definition: what, exactly, is the "twice" repeating?
@@ -220,10 +233,11 @@ We see new strands forming: . 1. Who is dancing? This is stylometry and attribut
 2. What is the dance? This is invariance and transmission: identify what survives across bodies.
 
 
+Now Peter will take the lead on discussing the technical approaches we built and appropriated for this work.
+
 ---
 
 # Methods
-
 
 
 ---
@@ -240,6 +254,7 @@ We see new strands forming: . 1. Who is dancing? This is stylometry and attribut
 </div>
 
 :::
+!PB
 As Michael mentioned, this project works with moving images recorded on standard 2D "monocular" cameras. This opens up basically the entire history of theater on film for analysis, but it can be quite challenging to get sufficient accurate pose data from such "in the wild" live stage or studio recordings, due to multiple camera angles, panning, cuts, occlusion, shadows and so forth.
 
 The first convolutional neural network-based pose estimation tools, such as OpenPose circa 2018, were revolutionary, but even after some further refinements, they still really struggled with in-the-wild videos such as the example shown on the left and are even more limited at estimating 3D coordinates and tracking multiple people in a shot.
@@ -255,6 +270,7 @@ As sometimes happens during this current era of AI research, a better model came
 ![Meta's SAM 3D Body](assets/methods/SAM3D_Body.png "Meta's SAM 3D Body model") <strong>Meta's SAM 3D Body</strong><br> Infers "Momentum Human Rig" (HMR) - rigid skeletons and volumetric meshes
 
 :::
+!PB
 The reward for procrastination -- eventually a better model comes along. This is from a demo of Meta's Segment Anything 3D Body model, which was released a few months ago. The base model only works on still images, but there are already open-source projects that have adapted it to run on videos. It incorporates two models, a rigid skeleton model and a deformable mesh, which are inferred semi-independently. The model was trained on multi-camera recordings, improving its ability to infer what can't be seen from a single (monocular) camera. It also does a better job than previous models of matching hands and feet (though it's still not perfect at that) and supports a greater variety of body types.
 
 ---
@@ -268,6 +284,7 @@ Jathushan Rajasegaran, Georgios Pavlakos, Angjoo Kanazawa, Jitendra Malik. “Tr
 https://github.com/broadwell/PHALP
 
 :::
+!PB
 The most important of the tools we used extensively, however, is a bit older, and it's named PHALP -- you can see the acronym there. It achieved state-of-the-art accuracy in pose estimation a few years ago (and is still the best for video) by interweaving the tasks of estimating human forms while also noting their appearance (that is, by extracting texture maps of their clothing and such) and tracking their trajectories over time in an estimated 3D space. This enables the transformer-based system to fill in occluded limbs and even entire poses that earlier models would "lose track of" for multiple frames before finding them again.
 
 
@@ -282,6 +299,7 @@ Jathushan Rajasegaran, Georgios Pavlakos, Angjoo Kanazawa, Christoph Feichtenhof
 https://github.com/broadwell/LART
 
 :::
+!PB
 We augmented the 3D pose data from PHALP with a customized action recognition tool built by the same team, named Lagrangian Action Recognition with Transformers. This software also produces a 60-element vector in the AVA "Atomic Visual Actions" embedding space to describe every detected action inferred for every pose in every frame.
 
 
@@ -296,6 +314,7 @@ Sun, Jennifer J, Jiaping Zhao, Liang-Chieh Chen, Florian Schroff, Hartwig Adam a
 https://sites.google.com/view/pr-vipe
 
 :::
+!PB
 Finally we adopted another embedding, this one from Google and CalTech, that projects the 2D coordinates of a pose into a 16-dimension space that situates poses closer together if they are probably similar in their actual 3D representations. Note that we also get the estimated 3D coordinates of the poses from PHALP, but as we'll see later, sometimes this probabilistic embedding is more useful for analysis.
 
 
@@ -330,7 +349,7 @@ Finally we adopted another embedding, this one from Google and CalTech, that pro
 </ul> <!-- .element: class="fragment" -->
 
 :::
-
+!PB
 The pipeline is first and foremost about running the inference tasks.
 
 In addition to the three core technologies that Peter already introduced our ingestion pipeline can also optionally perform Shot-Detection, Face Recognition, and Hand Estimation,
@@ -345,6 +364,7 @@ these are tasks that are adjacent to the primary AI/ML inference tasks and which
 # Interfaces
 
 :::
+!PB
 We don't have time for a live demonstration today, so instead I'll very quickly share some screenshots from some of the interface affordances we have available.
 
 ---
@@ -394,6 +414,7 @@ We have face clustering plotted along a time axis.
 <!-- .slide: data-transition="fade" -->
 
 :::
+!PB
 These images illustrate how the PHALP software infers depth from monocular inputs. The visualization on the left is actually from a different model (MoGe = Monocular Geometry) that we chose because it looks cooler, but the two models use broadly similar deep learning-based approaches.
 
 ---
@@ -402,6 +423,7 @@ These images illustrate how the PHALP software infers depth from monocular input
 <!-- .slide: data-transition="fade" -->
 
 :::
+!PB
 This is an interactive 2D UMAP projection of poses clustered with the HDBSCAN algorithm.
 
 We're using the visualization code here from pixplot, but the clustering and the projection are based not on the images but on the vector space that represents our pose estimation inference vectors.
@@ -412,6 +434,7 @@ We're using the visualization code here from pixplot, but the clustering and the
 <!-- .slide: data-transition="fade" -->
 
 :::
+!PB
 Searching for a source pose from one recording across a corpus of recordings...
 
 ---
@@ -420,7 +443,8 @@ Searching for a source pose from one recording across a corpus of recordings...
 <!-- .slide: data-transition="fade-in slide-out" -->
 
 :::
-And finally here's yours truly performing a pose in front of a webcam and using that to search for poses.
+!PB
+And finally here's our colleage Simon performing a pose in front of a webcam and using that to search for poses.
 
 Michael's now going to show us some of the ways he's been able to make use of these affordances in his work.
 
@@ -457,6 +481,7 @@ Davon Rainey: <br>"Nobody Knows"<br> in 2016
 </div>
 
 :::
+!MR (or PB)
 Previously, we considered early footage of Ted Shawn (1891-1972), the American choreographer and dancer who started the Denishawn School with his wife Ruth St. Denis, which was strongly influenced by the work of Francois Delsarte (1811-1871). They went on to influence many strains of modern american dance, and in recent years there's been a revival of interest in Shawn's work, as well as some remountings (reworkings?) of his dances.
 
 ---
@@ -471,6 +496,7 @@ Plots of the prevalences of the Shawn/Delsarte "Reflection" pose archetype<br> i
 </div>
 
 :::
+!PB - will explain the plots
 
 ---
 
@@ -482,6 +508,7 @@ Plots of the prevalences of the Shawn/Delsarte "Reflection" pose archetype<br> i
 <!-- .slide: class="main-title" -->
 
 :::
+!PB - will talk over the video to explan the comparison of source performances (1938 vs. 2016) and monocular pose tracking methods (PHALP = Human Mesh Recovery 2 vs. SAM 3D Body = Momentum Human Rig)
 
 ---
 
@@ -491,6 +518,8 @@ Plots of the prevalences of the Shawn/Delsarte "Reflection" pose archetype<br> i
 <!-- .slide: class="main-title" -->
 
 :::
+!PB - will talk over the video to explain the comparison of camera view w/ overlay vs. rendered, inferred side view (with the virtual camera swung 90 degrees around the center of the shot).
+
 This was originally meant to be a "complication" slide, but maybe it's just better used to illustrate both the abilities and shortcomings of monocular motion tracking when used to compare performance versions from (vastly) different eras. Except for the part at the end where the 1938 version goes haywire, though, the cautionary message of this kind of demo is somewhat muted because the Shawn choreography turns out to be pretty "monocular-friendly" -- few occluded limbs, little Z-axis motion, like the best TikTok videos (!), so the side renders actually turn out pretty well.
 
 ---
@@ -515,7 +544,7 @@ This was originally meant to be a "complication" slide, but maybe it's just bett
 </div>
 
 :::
-
+!MR or PB
 
 Zooming out from this close pose-related analysis and comparison of Shawn's choreography, we also compared stagings of a full-length theatrical work from seven different directors -- who in this case were all staging Mozart and Da Ponte's Don Giovanni from 1787.
 
@@ -543,6 +572,7 @@ The screenshots below show some pose estimation output from each of the director
 </div>
 
 :::
+!PB
 The table above gives derived statistics of the performances, highlighting entries with greater degrees of movement, distance between actors, and overall deviation from the average pose and actions. As the table is also ordered chronologically, it does seem to indicate a general tendency for performances to get more creative and/or "non-traditional" in their stagings over time, as quantified via pose and action estimation.
 
 
@@ -551,12 +581,17 @@ The table above gives derived statistics of the performances, highlighting entri
 
 ## Aligning Performances (by Music) to Get Average Pose "Consensus"
 
-<img class="r-stretch"
-  src="assets/methods/Don_Giovanni-Soderblom-Helsinki_UzxYEVbOS5w.mp4_chroma_time_correspondences.png"
-/>
-
+<div class="r-stack">
+  <img
+    src="assets/methods/Don_Giovanni-Soderblom-Helsinki_UzxYEVbOS5w.mp4_chroma_time_correspondences.png"
+  />
+  <img class="fragment"
+    src="assets/methods/Don_Giovanni-Soderblom-Helsinki_UzxYEVbOS5w.mp4_chroma_warping_path.png"
+  />
+</div>
 
 :::
+!PB
 Comparing the performances of Don Giovanni involved aligning all of them down to the sub-second level using the same pitch chroma/Dynamic Time Warping-based techniques previously applied to K-pop cover dances on TikTok
 !!! at some point we'll discuss how we considered the variations in tempo among works that this approach deliberately irons out.
 so that we could calculate the average poses and actions deployed at each moment of the opera -- in an attempt to find the choreographic "consensus performance" of this tradition. We also then computed the degree to which each director's staging deviates from this consensus at each moment, as part of our earlier study of directorial style.
@@ -580,8 +615,16 @@ As just mentioned, the easiest way to align the recordings, which only works bec
 </div>
 
 :::
+!PB
 As a final analytical output of the effort just described, we can plot the pose or motion similarities of each of the 7 performances to the average  "consensus" performance across the entire work (the dashed lines are scene and act boundaries). This is still a work in progress, but we can use this analysis to detect patterns such as certain scenes in which stagings are more likely to deviate from the consensus poses, and eventually use this to highlight automatically where directors might use especially distinctive poses and actions.
 
+---
+
+## Comparing Each Director's Poses to the "Consensus" Average
+
+<section data-background-iframe="assets/bokeh/dg_poem_comparison.html"
+         data-background-interactive>
+</section>
 
 ---
 
@@ -603,6 +646,7 @@ As a final analytical output of the effort just described, we can plot the pose 
 </div>
 
 :::
+!PB
 The case we've been considering lately is kind of a mixture of the two we've presented so far: the performances to be considered are long-form and multi-performer, like the Don Giovanni corpus, but consist only of two performances, the first of which can be considered the "orginal," as with the Ted Shawn "Nobody Knows" recordings. Here we're looking at performances of Pina Bausch's Kontakthof; one is from a television broadcast of the original staging from 1978, and the second is from the production "With Ladies and Gentlemen over 65" first staged in 2000 in Wuppertal.
 
 Here we can see an example of pose- and motion-related parallelism between these two performances. Just by flipping back and forth, we can see that the moments of greater synchronized motion (measured as the average correlation of in-place joint rotations per person on screen, observed approximately 6 times per second, then smoothed twice to get less jittery results) occur at roughly the same points in both performances. It also seems that the younger actors are a bit more synchronized, although the difference is small and could just be an artifact of the different recording conditions of the two performances.
@@ -623,9 +667,10 @@ Here we can see an example of pose- and motion-related parallelism between these
 </div>
 
 :::
-Considering this type of "Dance Theater" allowed us, and in fact encouraged us, to consider alternative methods of aligning performances and quantifying the "consensus" performance (in terms of pose/action/motion) and how and in which sections the two performances most conformed to or deviated from this consensus. Kontakthof contains a considerable amount of music, but there are also sections featuring fairly long silences or speech. An alignment system based entirely on musical pitches would miss any differences pacing between the two performances until the next shared musical section begins. So we ultimately decided on a system that combines the 12-pitch vector and the 16-element pose embedding of the person closest to the camera, after performing some normalization, at synchronized time slices between the video and audio, roughly 1/5 second.
+!PB
+Considering this type of "Dance Theater" allowed us, and in fact encouraged us, to consider alternative methods of aligning performances and quantifying the "consensus" performance (in terms of pose/action/motion) and how and in which sections the two performances most conformed to or deviated from this consensus. Kontakthof contains a considerable amount of music, but there are also sections featuring fairly long silences or speech. An alignment system based entirely on musical pitches would miss any differences in pacing between the two performances until the next shared musical section begins. So we ultimately decided on a system that combines the 12-pitch vector and the 16-element pose embedding of the person closest to the camera, after performing some normalization, at synchronized time slices between the video and audio, roughly 1/5 second.
 
-We attempted to validate our choices of alignment vectors by cross-comparing with the averaged 60-element action embedding vectors for all people in the shot; if an alignment method based on musical pitches, pose embeddings of the person closest to the camera, averaged pose embeddings, or actual normalized pose coordinates, alone or merged together (and normalized or not), produces a smaller average difference between the average action embedding vectors for each pair of aligned frames, then it's probably a better alignment strategy. The strategy we chose did in fact produce the lowest average difference, but they were all so similar to each other (within one standard deviation) that we can't be sure there's any meaningful difference between them.
+We attempted to validate our choices of alignment vectors by cross-comparing with the averaged 60-element action embedding vectors for all people in the shot; if an alignment method based on musical pitches, pose embeddings of the person closest to the camera, averaged pose embeddings, or actual normalized pose coordinates, alone or merged together (and normalized or not), produces a smaller average difference between the average action embedding vectors for each pair of aligned frames, then it's probably a better alignment strategy. The strategy we chose did in fact produce the lowest average difference, but all of the potential alignment inputs I just mentioned were all so similar to each other (within one standard deviation) that we can't be sure there's any meaningful difference between them.
 
 ---
 
@@ -635,6 +680,7 @@ We attempted to validate our choices of alignment vectors by cross-comparing wit
 <img class="stretch" src="assets/results/all_poses_chroma_avg_poem_sim.png" />
 
 :::
+!PB
 Note that we applied some fairly generous smoothing to get these curves, averaging +/-5 seconds on either side of the current frame, so a segment that scores as highly invariant may nonetheless have sections of noticeable variation within it (and vice versa). Shortening the smoothing window will find increasingly smaller sections of exceptional variation or invariance. This choice (+/- 5 seconds) tended to produce the most interesting results.
 
 ---
@@ -648,6 +694,7 @@ Note that we applied some fairly generous smoothing to get these curves, averagi
 <!-- .slide: class="main-title" -->
 
 :::
+!PB or MR to comment as needed
 
 ---
 
@@ -659,6 +706,7 @@ Note that we applied some fairly generous smoothing to get these curves, averagi
 <!-- .slide: class="main-title" -->
 
 :::
+!PB or MR to comment as needed
 
 ---
 
@@ -671,9 +719,9 @@ Note that we applied some fairly generous smoothing to get these curves, averagi
 <!-- .slide: class="main-title" -->
 
 :::
+!PB or MR to comment as needed
 
 ---
-
 
 
 # Complications
@@ -694,7 +742,6 @@ The difficulty identifying gesture and motion. What we're looking for is, stable
 
 
 # Implications
-
 
 :::
 !!! MR possibly provide summary/closing thoughts, implications, further considerations
@@ -724,12 +771,6 @@ Thank you.
 ---
 
 
-# Closing Thoughts
-
-
----
-
-
 # Thank You&#x21;
 
 <div class="logos">
@@ -745,6 +786,20 @@ Thank you.
 
 
 # Appendix
+
+
+---
+
+
+## Improving Motion Modeling
+
+<video data-autoplay controls muted src="assets/Johana19_ST_MC_W_V1m_P_S_triptych.mp4"></video>
+
+<div class="logos">
+
+<img src="assets/logos/Schmidt_Sciences_wordmark.png" height="200" style="background: white">
+
+</div>
 
 
 ---
@@ -1028,17 +1083,3 @@ Romeo Castellucci's Democracy in America
 
 :::
 Here you can see two different "thumbprints"--that demonstrate the the difference quantities of pose throughout the show. Bill T. Jones' production shows far more "Prostration" than Castellucci. And Castellucci's production features far more poses of supplication. And while it may seem a little silly to use these 19th century melodramatic poses to analize a works of contemporary theater, this method points towards ways in which this technology could be used to trace the genelogy of artistic movements, and the subtle ways that historical aesthetics shape our contemprary tastes.
-
-
----
-
-
-## Improving Motion Modeling
-
-<video data-autoplay controls muted src="assets/Johana19_ST_MC_W_V1m_P_S_triptych.mp4"></video>
-
-<div class="logos">
-
-<img src="assets/logos/Schmidt_Sciences_wordmark.png" height="200" style="background: white">
-
-</div>
