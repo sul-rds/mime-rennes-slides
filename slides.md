@@ -724,6 +724,22 @@ Note that we applied some fairly generous smoothing to get these curves, averagi
 ---
 
 
+## Future Directions
+
+<ul>
+  <li>"Hybrid" visual indexing and search: discrete objects (YOLO), semantic embeddings</li>
+  <li>Object detection -> costume segmentation</li>
+  <li>LMMs as "co-viewers"</li>
+  <li>Expecting continued improvement of world coordinate availability</li>
+  <li>Better implementation of motion rubato/rhythm detection and analysis</li>
+</ul>
+
+:::
+Both PB and MR
+
+---
+
+
 # Complications
 
 :::
